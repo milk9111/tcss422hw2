@@ -1,3 +1,38 @@
+/*
+	10/1/2017
+	Authors: Connor Lundberg, Gardner Gomes
+	
+	In this assignment we are creating a PCB (Process Control Block), ReadyQueue, and 
+	PriorityQueue. Each is made in sequence and then used to make the next one. The PCB
+	is being held within the ReadyQueue, and the PriorityQueue holds 16 ReadyQueues. 
+	This is going to be used for scheduling in the final OS project.
+	
+	In this file we are declaring the PCB which will hold the state of the cpu when it is
+	saved, as well as more information about the process such as its identification, state,
+	parent, priority, position in memory, size, and channel number.
+	
+	This is the header file for the PCB that holds the structs of the cpu context and the 
+	PCB and the declarations of the different functions.
+*/
+
+//includes
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+//defines
+#define ZERO 0x0000
+
+
+//function declarations
+PCB_p pcbConstructor();
+
+int pcbInitialize(PCB_p thisPCB, CPU_context_p thisPCBContext);
+
+int cpuContextInitialize(CPU_context_p thisCPUContext);
+
+
+//structs
 typedef struct cpu_context {
  // CPU state for the LC-3 processor
  unsigned int pc;
