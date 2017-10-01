@@ -24,14 +24,6 @@
 #define ZERO 0x0000
 
 
-//function declarations
-PCB_p pcbConstructor();
-
-int pcbInitialize(PCB_p thisPCB, CPU_context_p thisPCBContext);
-
-int cpuContextInitialize(CPU_context_p thisCPUContext);
-
-
 //structs
 typedef struct cpu_context {
  // CPU state for the LC-3 processor
@@ -67,3 +59,13 @@ typedef struct pcb {
 } PCB_s;
 
 typedef PCB_s * PCB_p;
+
+
+//function declarations
+PCB_p pcbConstructor();
+
+int pcbInitialize(PCB_p thisPCB);
+
+int cpuContextInitialize(CPU_context_p thisCPUContext);
+
+void toString(PCB_p thisPCB);
