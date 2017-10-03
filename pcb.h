@@ -22,6 +22,7 @@
 
 //defines
 #define ZERO 0x0000
+#define MAX_MEM_SIZE 64
 
 
 //structs
@@ -54,6 +55,7 @@ typedef struct pcb {
  unsigned int size; // number of bytes in process
  unsigned char channel_no; // which I/O device or service Q
 							// if process is blocked, which queue it is in
+							
  CPU_context_p context; // set of cpu registers
 						// other items to be added as needed.
 } PCB_s;

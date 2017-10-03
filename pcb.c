@@ -22,12 +22,12 @@
 	memory (in the heap).
 */
 PCB_p pcbConstructor() {
-	CPU_context_p temp_context = (CPU_context_p) malloc(sizeof(CPU_context_p));	//create cpu context to go inside pcb
+	CPU_context_p temp_context = (CPU_context_p) malloc(sizeof(CPU_context_s));	//create cpu context to go inside pcb
 	
-	PCB_p pcb = (PCB_p) malloc(sizeof(PCB_p));	//create pcb
+	PCB_p pcb = (PCB_p) malloc(sizeof(PCB_s));	//create pcb
 	
 	pcb->context = temp_context;	
-	(pcb->mem) = (char *) pcb;	//sets the location of this pcb to the mem pointer held by the pcb (so it knows where it is).
+	//(pcb->mem) = (char *) pcb;	//sets the location of this pcb to the mem pointer held by the pcb (so it knows where it is).
 
 	return pcb;
 }
@@ -79,9 +79,6 @@ int cpuContextInitialize(CPU_context_p thisPCBContext) {
 	Prints out all contents of the PCB and its cpu context.
 */
 void toString(PCB_p thisPCB) {
-	printf("PCB values: \n");
-	printf("pid: %d\n", thisPCB->pid);
-	printf("%d\n", sizeof(thisPCB->pid));
 	switch(thisPCB->state) {
 		case new:
 			printf("state: new\n");
@@ -102,47 +99,32 @@ void toString(PCB_p thisPCB) {
 			printf("state: halted\n");
 			break;
 	}
-	printf("%d\n", sizeof(thisPCB->state));
 	printf("parent: %d\n", thisPCB->parent);
-	printf("%d\n", sizeof(thisPCB->parent));
 	printf("priority: %d\n", thisPCB->priority);
-	printf("%d\n", sizeof(thisPCB->priority));
 	printf("mem: 0x%04X\n", thisPCB->mem);
-	printf("%d\n", sizeof(thisPCB->mem));
 	printf("size: %d\n", thisPCB->size);
-	printf("%d\n", sizeof(thisPCB->size));
 	printf("channel_no: %d\n", thisPCB->channel_no);
-	printf("%d\n", sizeof(thisPCB->channel_no));
-	printf("%d\n", sizeof(thisPCB->context));
 	
 	printf("\nCPU context values: \n");
 	printf("\t pc: %d\n", thisPCB->context->pc);
-	printf("%d\n", sizeof(thisPCB->context->pc));
 	printf("\t ir: %d\n", thisPCB->context->ir);
-	printf("%d\n", sizeof(thisPCB->context->ir));
 	printf("\t psr: %d\n", thisPCB->context->psr);
-	printf("%d\n", sizeof(thisPCB->context->psr));
 	printf("\t r0: %d\n", thisPCB->context->r0);
-	printf("%d\n", sizeof(thisPCB->context->r0));
 	printf("\t r1: %d\n", thisPCB->context->r1);
-	printf("%d\n", sizeof(thisPCB->context->r1));
 	printf("\t r2: %d\n", thisPCB->context->r2);
-	printf("%d\n", sizeof(thisPCB->context->r2));
 	printf("\t r3: %d\n", thisPCB->context->r3);
-	printf("%d\n", sizeof(thisPCB->context->r3));
 	printf("\t r4: %d\n", thisPCB->context->r4);
-	printf("%d\n", sizeof(thisPCB->context->r4));
 	printf("\t r5: %d\n", thisPCB->context->r5);
-	printf("%d\n", sizeof(thisPCB->context->r5));
 	printf("\t r6: %d\n", thisPCB->context->r6);
-	printf("%d\n", sizeof(thisPCB->context->r6));
 	printf("\t r7: %d\n\n", thisPCB->context->r7);
-	printf("%d\n", sizeof(thisPCB->context->r7));
 }
 
 
 void main() {
 	PCB_p thisPCB = pcbConstructor();
 	pcbInitialize(thisPCB);
-	toString(thisPCB);
+	//printf("after: %d\n", thisPCB->pid);
+
+
+	//toString(thisPCB);
 }
