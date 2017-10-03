@@ -19,10 +19,11 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 //defines
 #define ZERO 0x0000
-#define MAX_MEM_SIZE 64
+#define MAX_MEM_SIZE 10
 
 
 //structs
@@ -62,12 +63,41 @@ typedef struct pcb {
 
 typedef PCB_s * PCB_p;
 
+typedef struct pidNode {
+	int pid;
+	struct pidNode *next;
+} pidNode_s;
+
+typedef pidNode_s * pNode;
+
+typedef struct pidQueue {
+	pNode top;
+	pNode bottom;
+}pidQueue_s;
+
+typedef pidQueue_s * pQueue;
+
+
+//globals
+extern int pidCounter;
+extern pQueue openPids;
+
 
 //function declarations
 PCB_p pcbConstructor();
 
-int pcbInitialize(PCB_p thisPCB);
+pQueue pQueueConstructor();
 
-int cpuContextInitialize(CPU_context_p thisCPUContext);
+int pcbInitialize(PCB_p);
 
-void toString(PCB_p thisPCB);
+int cpuContextInitialize(CPU_context_p);
+
+CPU_context_p getCPUContext(PCB_p);
+
+int setCPUContext(CPU_context_p, PCB_p);
+
+void assignPID(PCB_p);
+
+void pcbDeconstructor(PCB_p);
+
+void toString(PCB_p);
