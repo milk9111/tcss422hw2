@@ -56,11 +56,11 @@ void readyQueueInitializer(readyQueue_p theQueue) {
     q_isEmpty Return 1 if the queue is empty 
 */
 int q_isEmpty(readyQueue_s theQueue) {
-    int errorCode = 0;
-    if(theQueue.top == 0) {
-        errorCode = 1;
+    int isEmpty = 0;
+    if(!theQueue.top) {
+        isEmpty = 1;
     }
-    return errorCode;
+    return isEmpty;
 }
 /*
     sets the last nodes next value to the address of the node sent in as a paramater
@@ -83,6 +83,6 @@ void main() {
     readyQueue_p myQueue= readyQueueConstructor();
     printf("HELLO WORLD!!!!\n");
     printf("%x\n",&myQueue);                            //Prints location of myQueue
-    printf("%d\n",myQueue->top);                        //prints address for pointer to top
+    printf("%x\n",myQueue->top);                        //prints address for pointer to top
     printf("%d",q_isEmpty(*myQueue));                   //prints result if empty
 }
