@@ -166,7 +166,7 @@ void toStringReadyQueue(ReadyQueue theQueue) {
 }
 
 
-/*void main() {
+void main() {
     ReadyQueue myQueue= readyQueueConstructor();
     printf("HELLO WORLD!!!!\n");
     printf("%x\n",&myQueue);                            //Prints location of myQueue
@@ -191,5 +191,5 @@ void toStringReadyQueue(ReadyQueue theQueue) {
     // printf("\n%x\n",myQueue->top);
     printf("Completed");
 
-}*/
+}
 
