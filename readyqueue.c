@@ -114,7 +114,7 @@ int q_enqueue(ReadyQueue theQueue, ReadyQueueNode theNode) {
             success = 1;
         } else {
 			//should this be = instead of ==?
-            theQueue->bottom->next == theNode;
+            theQueue->bottom->next = theNode;
             success = 1;
         }
     }
@@ -140,29 +140,30 @@ ReadyQueueNode q_dequeue(ReadyQueue theQueue) {
 
 
 void toStringReadyQueueNode(ReadyQueueNode theNode) {
-    printf("Hererere");
-	printf("|%d|",theNode->myPCB);
+   // printf("Hererere");
+	printf("|%d|",theNode->myPCB->pid);
     if(theNode->next != 0) {
         printf("--->");
     } else {
-        printf("NULL\n");
+        printf("NULL");
     }
 }
+
 void toStringReadyQueue(ReadyQueue theQueue) {
-    printf("TOSTRINGQUEUE\n");
+    //printf("TOSTRINGQUEUE\n");
     if(theQueue->top == 0) {
         printf("NULL\n");
     } else {
         ReadyQueueNode temp = theQueue->top;
-        printf("%x or %x\n",temp->next, theQueue->top->next);
+        //printf("%x or %x\n",temp->next, theQueue->top->next);
         while(temp->next != 0) {
-            printf("while 2\n");
+            //printf("while 2\n");
             toStringReadyQueueNode(temp);
             temp = temp->next;
         }
+		printf("\n");
     }
 }
-
 
 
 /*void main() {
@@ -185,8 +186,10 @@ void toStringReadyQueue(ReadyQueue theQueue) {
     q_dequeue(myQueue);                                //dequeing         
     printf("top next = %x\n",myQueue->top->next);                 //checking new top
 
-    // toStringReadyQueueNode(myNode1);
+ // toStringReadyQueueNode(myNode1);
     toStringReadyQueue(myQueue);
     // printf("\n%x\n",myQueue->top);
     printf("Completed");
+
 }*/
+
