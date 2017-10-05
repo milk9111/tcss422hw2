@@ -100,4 +100,5 @@ void assignPID(PCB thePCB);
 
 void pcbDeconstructor(PCB thePCB);
 
-void toString(PCB thePCB);
+void toStringPCB(PCB thePCB);
+

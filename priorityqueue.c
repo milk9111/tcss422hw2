@@ -7,39 +7,53 @@
 	is being held within the ReadyQueue, and the PriorityQueue holds 16 ReadyQueues. 
 	This is going to be used for scheduling in the final OS project.
 	
-	In this file we are declaring the Nodes and the Ready Queue to be used for storing the 
-    PCB pointers during runtime operation. The Node had a pointer to the PCB and the next node.
-    The Queue has a pointer for the node at the top and a pointer to the node at the end of the 
-    queue.
+	In this file we are defining the functions for our PriorityQueue. We have a constructor
+	that simple calls the ReadyQueue constructor for each priority level. The initializer and
+	deconstructor essentially do the same thing. This also defines the addProcess and 
+	getNextProcess functions which add a new process to its priority level, as well as get the
+	next process to run, respectively.
 */
 
 #include "priorityqueue.h"
 
 
+/*
+	Calls the ReadyQueue constructor to make each priority level. Returns the PriorityQueue
+	struct pointer after it's finished.
+*/
 PriorityQueue priorityQueueConstructor() {
 	PriorityQueue pQueue = (PriorityQueue) malloc (sizeof(priority_queue_s));
 	for (int i = 0; i < PRIORITY_QUEUE_LENGTH; i++) {
 		pQueue->priorities[i] = readyQueueConstructor();
 	}
 	
+	priorityQueueInitializer(pQueue);
+	
 	return pQueue;
 }
 
 
+/*
+	Calls the ReadyQueue initializer to start each priority level. Returns an error code.
+*/
 int priorityQueueInitializer(PriorityQueue thisPQueue) {
 	int errorCode = 0;
 	for (int i = 0; i < PRIORITY_QUEUE_LENGTH; i++) {
-		thisPQueue->priorities[i] = readyQueueInitializer();
+		readyQueueInitializer(thisPQueue->priorities[i]);
 	}
 	
 	return errorCode;
 }	
 
 
+/*
+	Calls the ReadyQueue deconstructor to free each priority level, then frees the PriorityQueue.
+	Returns an error code.
+*/
 int priorityQueueDeconstructor(PriorityQueue thisPQueue) {
 	int errorCode = 0;
 	for (int i = 0; i < PRIORITY_QUEUE_LENGTH; i++) {
-		thisPQueue->priorities[i] = readyQueueDeconstructor();
+		readyQueueDeconstructor(thisPQueue->priorities[i]);
 	}
 	free(thisPQueue);
 	
@@ -47,7 +61,11 @@ int priorityQueueDeconstructor(PriorityQueue thisPQueue) {
 }
 
 
-void addProcess(PCB thisPCB, PriorityQueue, thisPQueue) {
+/*
+	Creates a new ReadyQueueNode and sets its PCB value to the one provided, then enqueues
+	the new node into the ReadyQueue at the PCBs priority level.
+*/
+void addProcess(PCB thisPCB, PriorityQueue thisPQueue) {
 	ReadyQueueNode newNode = rdyQueueNodeConstructor();
 	rdyQueueNodeInitializer(newNode);
 	rdyQueueNodeSetPCB(newNode, thisPCB);
@@ -56,11 +74,15 @@ void addProcess(PCB thisPCB, PriorityQueue, thisPQueue) {
 }
 
 
+/*
+	Dequeues the next available PCB from the PriorityQueue. Will return NULL if no values
+	are available.
+*/
 PCB getNextProcess(PriorityQueue thisPQueue) {
 	PCB nextProcess = NULL;
 	for (int i = 0; i < PRIORITY_QUEUE_LENGTH; i++) {
 		if (!q_isEmpty(thisPQueue->priorities[i])) {
-			nextProcess = q_dequeue(thisPQueue->priorities[i]);
+			nextProcess = q_dequeue(thisPQueue->priorities[i])->myPCB;
 			break;
 		}
 	}
@@ -69,11 +91,15 @@ PCB getNextProcess(PriorityQueue thisPQueue) {
 }
 
 
-void toString(PriorityQueue thisPQueue) {
-	
+void toStringPriorityQueue(PriorityQueue thisPQueue) {
+	for (int i = 0; i < PRIORITY_QUEUE_LENGTH; i++) {
+		printf("%d: ", i);
+		//toStringReadyQueue(thisPQueue->priorities[i]);
+	}
 }
 
 
 void main() {
-	
+	PriorityQueue pQueue = priorityQueueConstructor();
+	printf("it compiled!\n");
 }

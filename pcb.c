@@ -17,6 +17,8 @@
 
 int pidCounter;
 pQueue openPids;
+time_t t;
+#define TIME {srand((unsigned) time(&t));};
 
 /*
 	The PCB constructor. This will allocate memory for the cpu context as well as the PCB
@@ -26,11 +28,13 @@ pQueue openPids;
 PCB pcbConstructor() {
 	CPU_context_p temp_context = (CPU_context_p) malloc(sizeof(CPU_context_s));	//create cpu context to go inside pcb
 	
+	
 	PCB pcb = (PCB) malloc(sizeof(PCB_s));	//create pcb
 	
 	pcb->context = temp_context;	
 	pcb->mem = (char *) pcb;	//sets the location of this pcb to the mem pointer held by the pcb (so it knows where it is).
-
+	
+	pcbInitialize(pcb);
 	return pcb;
 }
 
@@ -124,7 +128,7 @@ void assignPID(PCB thisPCB) {
 /*
 	Prints out all contents of the PCB and its CPU Context.
 */
-void toString(PCB thisPCB) {
+void toStringPCB(PCB thisPCB) {
 	printf("\nPCB values: \n");
 	printf("pid: %d\n", thisPCB->pid);
 	switch(thisPCB->state) {
@@ -203,35 +207,3 @@ void pcbDeconstructor(PCB thisPCB) {
 	}
 }
 
-
-// void main() {
-// 	time_t t;
-// 	srand((unsigned) time(&t));
-	
-// 	openPids = pQueueConstructor();
-	
-// 	PCB pcbs[MAX_MEM_SIZE + 1];
-// 	for (int i = 0; i < MAX_MEM_SIZE; i++) {
-// 		pcbs[i] = pcbConstructor();
-// 		pcbInitialize(pcbs[i]);
-// 		assignPID(pcbs[i]);
-// 		toString(pcbs[i]);
-// 	}
-// 	printf("\n--------------------------------\n");
-// 	pcbDeconstructor(pcbs[8]);
-// 	pcbs[8] = NULL;
-// 	for (int i = 0; i < MAX_MEM_SIZE; i++) {
-// 		if (pcbs[i]) {
-// 			toString(pcbs[i]);
-// 		}
-// 	}
-// 	printf("\n--------------------------------\n");
-// 	pcbs[MAX_MEM_SIZE] = pcbConstructor();
-// 	pcbInitialize(pcbs[MAX_MEM_SIZE]);
-// 	assignPID(pcbs[MAX_MEM_SIZE]);
-// 	for (int i = 0; i < MAX_MEM_SIZE + 1; i++) {
-// 		if (pcbs[i]) {
-// 			toString(pcbs[i]);
-// 		}
-// 	}
-// }
