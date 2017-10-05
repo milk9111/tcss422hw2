@@ -38,11 +38,15 @@ typedef readyQueue_s * ReadyQueue;
 //Function declarations
 ReadyQueueNode rdyQueueNodeConstructor();
 
+void rdyQueueNodeDeconstructor(ReadyQueueNode theNode);
+
 void rdyQueueNodeSetNext(ReadyQueueNode theNode, ReadyQueueNode nextNode);
 
 ReadyQueue readyQueueConstructor();
 
-int q_is_empty(readyQueue_s theQueue);
+void readyQueueDeconstructor(ReadyQueue theQueue);
+
+int q_isEmpty(ReadyQueue theQueue);
 
 int q_enqueue(ReadyQueue theQueue, ReadyQueueNode theNode);
 
@@ -54,6 +58,6 @@ void rdyQueueNodeInitializer(ReadyQueueNode theNode);
 
 void rdyQueueNodeSetPCB(ReadyQueueNode theNode, PCB thePCB);
 
-void toString(ReadyQueue theQueue);
+/*void toString(ReadyQueue theQueue);
 
-void toString(ReadyQueueNode theNode);
+void toString(ReadyQueueNode theNode);*/

@@ -137,17 +137,17 @@ ReadyQueueNode q_dequeue(ReadyQueue theQueue) {
 }
 
 
-void toString(ReadyQueue theQueue) {
+/*void toString(ReadyQueue theQueue) {
 
 }
 
 
 void toString(ReadyQueueNode theNode) {
 	
-}
+}*/
 
 
-void main() {
+/*void main() {
     ReadyQueue myQueue= readyQueueConstructor();
     printf("HELLO WORLD!!!!\n");
     printf("%x\n",&myQueue);                            //Prints location of myQueue
@@ -167,4 +167,4 @@ void main() {
     q_dequeue(myQueue);                                //dequeing         
     printf("top = %x\n",myQueue->top);                 //checking new top
 
-}
+}*/

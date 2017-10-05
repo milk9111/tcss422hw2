@@ -14,7 +14,7 @@
 */
 
 //includes
-#includes "readyqueue.h"
+#include "readyqueue.h"
 
 
 //defines
@@ -24,7 +24,7 @@
 //structs
 typedef struct priority_queue {
 	ReadyQueue priorities[PRIORITY_QUEUE_LENGTH];
-} priority_queue_s
+} priority_queue_s;
 
 typedef priority_queue_s * PriorityQueue;
 
@@ -36,9 +36,9 @@ int priorityQueueInitializer(PriorityQueue);
 
 int priorityQueueDeconstructor(PriorityQueue);
 
-void addProcess(PCB);
+void addProcess(PCB, PriorityQueue);
 
 PCB getNextProcess();
 
-void toString(PriorityQueue);
+void toStringPriorityQueue(PriorityQueue);
 
