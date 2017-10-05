@@ -18,7 +18,7 @@
 int pidCounter;
 pQueue openPids;
 time_t t;
-#define TIME {srand((unsigned) time(&t));};
+#define TIME {pidCounter = 0; srand((unsigned) time(&t));};
 
 /*
 	The PCB constructor. This will allocate memory for the cpu context as well as the PCB
@@ -56,6 +56,8 @@ int pcbInitialize(PCB thisPCB) {
 	thisPCB->priority = rand() % 15;
 	thisPCB->channel_no = 0;
 	thisPCB->size = sizeof(thisPCB);
+	
+	assignPID(thisPCB);
 	
 	return errorNumber;
 }
@@ -112,15 +114,23 @@ int setCPUContext(CPU_context_p thisCPUContext, PCB thisPCB) {
 	pidCounter and increment it.
 */
 void assignPID(PCB thisPCB) {
+	thisPCB->pid = pidCounter;
+	pidCounter++;
+	
+	
+	//We will need to fix this when we start working on reusing PIDs
+	/*printf("here\n");
 	if (openPids->top) {
+		printf ("in here\n");
 		thisPCB->pid = openPids->top->pid;
 		pNode next = openPids->top->next;
 		free(openPids->top);
 		openPids->top = next;
 	} else {
+		printf("or here\n");
 		thisPCB->pid = pidCounter;
 		pidCounter++;
-	}
+	}*/
 }
 
 
@@ -208,10 +218,6 @@ void pcbDeconstructor(PCB thisPCB) {
 
 
 /*void main() {
-	
-	
-	openPids = pQueueConstructor();
-	
 	PCB pcbs[MAX_MEM_SIZE + 1];
 	for (int i = 0; i < MAX_MEM_SIZE; i++) {
 		pcbs[i] = pcbConstructor();

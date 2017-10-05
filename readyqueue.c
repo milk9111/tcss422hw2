@@ -15,6 +15,7 @@
 
 //includes
 #include "readyqueue.h"
+// #include "pcb.h"
 
 
 /*
@@ -50,7 +51,16 @@ void rdyQueueNodeSetPCB(ReadyQueueNode theNode, PCB thePCB) {
 void rdyQueueNodeSetNext(ReadyQueueNode theNode, ReadyQueueNode nextNode) {
     theNode->next = nextNode;
 }
-
+/*
+    q_isEmpty Return 1 if the queue is empty 
+*/
+int q_isEmpty(ReadyQueue theQueue) {
+    int isEmpty = 0;
+    if(!theQueue->top) {
+        isEmpty = 1;
+    }
+    return isEmpty;
+}
 
 /*
     Constructor for the Ready Queue
@@ -80,16 +90,7 @@ void readyQueueInitializer(ReadyQueue theQueue) {
 }
 
 
-/*
-    q_isEmpty Return 1 if the queue is empty 
-*/
-int q_isEmpty(ReadyQueue theQueue) {
-    int isEmpty = 0;
-    if(!theQueue->top) {
-        isEmpty = 1;
-    }
-    return isEmpty;
-}
+
 
 
 /*
@@ -108,11 +109,12 @@ int q_enqueue(ReadyQueue theQueue, ReadyQueueNode theNode) {
         //top next == node && bottom == node
         if(theQueue->top->next == 0) {
             theQueue->top->next = theNode;
+            printf("Enqueue top Next %x the Node %x",theQueue->top->next,theNode);
             theQueue->bottom = theNode;
             success = 1;
         } else {
 			//should this be = instead of ==?
-            theQueue->bottom->next == theNode;
+            theQueue->bottom->next = theNode;
             success = 1;
         }
     }
@@ -137,14 +139,32 @@ ReadyQueueNode q_dequeue(ReadyQueue theQueue) {
 }
 
 
-/*void toString(ReadyQueue theQueue) {
-
+void toStringReadyQueueNode(ReadyQueueNode theNode) {
+    //printf("Hererere");
+	printf("|%d|",theNode->myPCB->pid);
+    if(theNode->next != 0) {
+        printf("--->");
+    } else {
+        printf("NULL");
+    }
 }
 
 
-void toString(ReadyQueueNode theNode) {
-	
-}*/
+void toStringReadyQueue(ReadyQueue theQueue) {
+    //printf("TOSTRINGQUEUE\n");
+    if(theQueue->top == 0) {
+        printf("NULL\n");
+    } else {
+        ReadyQueueNode temp = theQueue->top;
+        //printf("%x or %x\n",temp->next, theQueue->top->next);
+        while(temp->next != 0) {
+            //printf("while 2\n");
+            toStringReadyQueueNode(temp);
+            temp = temp->next;
+        }
+		printf("\n");
+    }
+}
 
 
 /*void main() {
@@ -152,7 +172,7 @@ void toString(ReadyQueueNode theNode) {
     printf("HELLO WORLD!!!!\n");
     printf("%x\n",&myQueue);                            //Prints location of myQueue
     printf("%x\n",myQueue->top);                        //prints address for pointer to top
-    printf("%d\n",q_isEmpty(*myQueue));                   //prints result if empty
+    printf("%d\n",q_isEmpty(myQueue));                   //prints result if empty
     ReadyQueueNode myNode1 = rdyQueueNodeConstructor();
     ReadyQueueNode myNode2 = rdyQueueNodeConstructor();
     ReadyQueueNode myNode3 = rdyQueueNodeConstructor();
@@ -165,6 +185,11 @@ void toString(ReadyQueueNode theNode) {
     x = q_enqueue(myQueue, myNode3);
     printf("top = %x\n",myQueue->top);                 //checking top before dequeue
     q_dequeue(myQueue);                                //dequeing         
-    printf("top = %x\n",myQueue->top);                 //checking new top
+    printf("top next = %x\n",myQueue->top->next);                 //checking new top
+ // toStringReadyQueueNode(myNode1);
+    toStringReadyQueue(myQueue);
+    // printf("\n%x\n",myQueue->top);
+    printf("Completed");
 
 }*/
+

@@ -43,6 +43,7 @@ void rdyQueueNodeDeconstructor(ReadyQueueNode theNode);
 void rdyQueueNodeSetNext(ReadyQueueNode theNode, ReadyQueueNode nextNode);
 
 ReadyQueue readyQueueConstructor();
+void rdyQueueNodeDeconstructor(ReadyQueueNode thisNode);
 
 void readyQueueDeconstructor(ReadyQueue theQueue);
 
@@ -58,6 +59,6 @@ void rdyQueueNodeInitializer(ReadyQueueNode theNode);
 
 void rdyQueueNodeSetPCB(ReadyQueueNode theNode, PCB thePCB);
 
-/*void toString(ReadyQueue theQueue);
+void toStringReadyQueue(ReadyQueue theQueue);
 
-void toString(ReadyQueueNode theNode);*/
+void toStringReadyQueueNode(ReadyQueueNode theNode);
