@@ -88,16 +88,16 @@ PCB pcbConstructor();
 
 pQueue pQueueConstructor();
 
-int pcbInitialize(PCB);
+int pcbInitialize(PCB thePCB);
 
-int cpuContextInitialize(CPU_context_p);
+int cpuContextInitialize(CPU_context_p theContext);
 
-CPU_context_p getCPUContext(PCB);
+CPU_context_p getCPUContext(PCB theContext);
 
-int setCPUContext(CPU_context_p, PCB);
+int setCPUContext(CPU_context_p theContext, PCB thePCB);
 
-void assignPID(PCB);
+void assignPID(PCB thePCB);
 
-void pcbDeconstructor(PCB);
+void pcbDeconstructor(PCB thePCB);
 
-void toString(PCB);
+void toString(PCB thePCB);

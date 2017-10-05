@@ -204,34 +204,34 @@ void pcbDeconstructor(PCB thisPCB) {
 }
 
 
-void main() {
-	time_t t;
-	srand((unsigned) time(&t));
+// void main() {
+// 	time_t t;
+// 	srand((unsigned) time(&t));
 	
-	openPids = pQueueConstructor();
+// 	openPids = pQueueConstructor();
 	
-	PCB pcbs[MAX_MEM_SIZE + 1];
-	for (int i = 0; i < MAX_MEM_SIZE; i++) {
-		pcbs[i] = pcbConstructor();
-		pcbInitialize(pcbs[i]);
-		assignPID(pcbs[i]);
-		toString(pcbs[i]);
-	}
-	printf("\n--------------------------------\n");
-	pcbDeconstructor(pcbs[8]);
-	pcbs[8] = NULL;
-	for (int i = 0; i < MAX_MEM_SIZE; i++) {
-		if (pcbs[i]) {
-			toString(pcbs[i]);
-		}
-	}
-	printf("\n--------------------------------\n");
-	pcbs[MAX_MEM_SIZE] = pcbConstructor();
-	pcbInitialize(pcbs[MAX_MEM_SIZE]);
-	assignPID(pcbs[MAX_MEM_SIZE]);
-	for (int i = 0; i < MAX_MEM_SIZE + 1; i++) {
-		if (pcbs[i]) {
-			toString(pcbs[i]);
-		}
-	}
-}
+// 	PCB pcbs[MAX_MEM_SIZE + 1];
+// 	for (int i = 0; i < MAX_MEM_SIZE; i++) {
+// 		pcbs[i] = pcbConstructor();
+// 		pcbInitialize(pcbs[i]);
+// 		assignPID(pcbs[i]);
+// 		toString(pcbs[i]);
+// 	}
+// 	printf("\n--------------------------------\n");
+// 	pcbDeconstructor(pcbs[8]);
+// 	pcbs[8] = NULL;
+// 	for (int i = 0; i < MAX_MEM_SIZE; i++) {
+// 		if (pcbs[i]) {
+// 			toString(pcbs[i]);
+// 		}
+// 	}
+// 	printf("\n--------------------------------\n");
+// 	pcbs[MAX_MEM_SIZE] = pcbConstructor();
+// 	pcbInitialize(pcbs[MAX_MEM_SIZE]);
+// 	assignPID(pcbs[MAX_MEM_SIZE]);
+// 	for (int i = 0; i < MAX_MEM_SIZE + 1; i++) {
+// 		if (pcbs[i]) {
+// 			toString(pcbs[i]);
+// 		}
+// 	}
+// }
