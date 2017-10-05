@@ -23,10 +23,10 @@ pQueue openPids;
 	pointer. It will also then set the PCB's mem pointer to this PCB's location in
 	memory (in the heap).
 */
-PCB_p pcbConstructor() {
+PCB pcbConstructor() {
 	CPU_context_p temp_context = (CPU_context_p) malloc(sizeof(CPU_context_s));	//create cpu context to go inside pcb
 	
-	PCB_p pcb = (PCB_p) malloc(sizeof(PCB_s));	//create pcb
+	PCB pcb = (PCB) malloc(sizeof(PCB_s));	//create pcb
 	
 	pcb->context = temp_context;	
 	pcb->mem = (char *) pcb;	//sets the location of this pcb to the mem pointer held by the pcb (so it knows where it is).
@@ -39,7 +39,7 @@ PCB_p pcbConstructor() {
 	Initializes the PCB values. This also contains a call to the cpu context initializer that
 	will then initialize the cpu context values.
 */
-int pcbInitialize(PCB_p thisPCB) {
+int pcbInitialize(PCB thisPCB) {
 	int errorNumber = 0;
 	
 	//time_t t;
@@ -84,7 +84,7 @@ int cpuContextInitialize(CPU_context_p thisPCBContext) {
 	Returns a copy of the PCB parameter's CPU Context. This had allocated memory so it
 	will need to be freed.
 */
-CPU_context_p getCPUContext(PCB_p thisPCB) {
+CPU_context_p getCPUContext(PCB thisPCB) {
 	CPU_context_p cpuCopy = (CPU_context_p) malloc (sizeof(CPU_context_s));
 	*cpuCopy = *(thisPCB->context);
 	return cpuCopy;
@@ -96,7 +96,7 @@ CPU_context_p getCPUContext(PCB_p thisPCB) {
 	This will actually set the values of the struct, not link the pointers. Returns 
 	0 if everything went smoothly.
 */
-int setCPUContext(CPU_context_p thisCPUContext, PCB_p thisPCB) {
+int setCPUContext(CPU_context_p thisCPUContext, PCB thisPCB) {
 	int errorCode = 0;
 	*(thisPCB->context) = *thisCPUContext;
 	return errorCode;
@@ -108,7 +108,7 @@ int setCPUContext(CPU_context_p thisCPUContext, PCB_p thisPCB) {
 	pid queue if there is one available, otherwise it will get the next one from the
 	pidCounter and increment it.
 */
-void assignPID(PCB_p thisPCB) {
+void assignPID(PCB thisPCB) {
 	if (openPids->top) {
 		thisPCB->pid = openPids->top->pid;
 		pNode next = openPids->top->next;
@@ -124,7 +124,7 @@ void assignPID(PCB_p thisPCB) {
 /*
 	Prints out all contents of the PCB and its CPU Context.
 */
-void toString(PCB_p thisPCB) {
+void toString(PCB thisPCB) {
 	printf("\nPCB values: \n");
 	printf("pid: %d\n", thisPCB->pid);
 	switch(thisPCB->state) {
@@ -186,7 +186,7 @@ pQueue pQueueConstructor() {
 /*
 	Frees up the given PCB and puts the pid into the open pid queue.
 */
-void pcbDeconstructor(PCB_p thisPCB) {
+void pcbDeconstructor(PCB thisPCB) {
 	if (openPids->top) {
 		openPids->bottom->next = (pNode) malloc (sizeof(pidNode_s));
 		openPids->bottom = openPids->bottom->next;
@@ -210,7 +210,7 @@ void main() {
 	
 	openPids = pQueueConstructor();
 	
-	PCB_p pcbs[MAX_MEM_SIZE + 1];
+	PCB pcbs[MAX_MEM_SIZE + 1];
 	for (int i = 0; i < MAX_MEM_SIZE; i++) {
 		pcbs[i] = pcbConstructor();
 		pcbInitialize(pcbs[i]);

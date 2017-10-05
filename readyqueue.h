@@ -18,30 +18,42 @@
 
 //Node for ReadyQueue
 typedef struct rdyQueueNode {   
-	PCB_p myPCB;                //Has PCB Pointer
+	PCB myPCB;                //Has PCB Pointer
 	struct rdyQueueNode *next;  //Has Pointer to next Node
 } rdyQueueNode_s;
 
 //Defining a pointer for ReadyQueueNode
-typedef rdyQueueNode_s * rdyQueueNode_p; 
+typedef rdyQueueNode_s * ReadyQueueNode; 
 
 //ReadyQueue
 typedef struct readyQueue {    
-    rdyQueueNode_p top;        //Pointer to first Node in queue
-	rdyQueueNode_p bottom;
+    ReadyQueueNode top;        //Pointer to first Node in queue
+	ReadyQueueNode bottom;
 } readyQueue_s;
 
 //Defining a pointer to the ReadyQueue
-typedef readyQueue_s * readyQueue_p;
+typedef readyQueue_s * ReadyQueue;
+
 
 //Function declarations
+ReadyQueueNode rdyQueueNodeConstructor();
+
+void rdyQueueNodeSetNext(ReadyQueueNode theNode, ReadyQueueNode nextNode);
+
+ReadyQueue readyQueueConstructor();
 
 int q_is_empty(readyQueue_s theQueue);
 
-int q_enqueue(readyQueue_p theQueue,rdyQueueNode_p theNode);
+int q_enqueue(ReadyQueue theQueue, ReadyQueueNode theNode);
 
-rdyQueueNode_p q_dequeue(readyQueue_p theQueue);
+ReadyQueueNode q_dequeue(ReadyQueue theQueue);
 
-void readyQueueInitializer(readyQueue_p theQueue);
-void rdyQueueNodeInitializer(rdyQueueNode_p theNode);
-void rdyQueueNodeSetPCB(rdyQueueNode_p theNode, PCB_p thePCB);
+void readyQueueInitializer(ReadyQueue theQueue);
+
+void rdyQueueNodeInitializer(ReadyQueueNode theNode);
+
+void rdyQueueNodeSetPCB(ReadyQueueNode theNode, PCB thePCB);
+
+void toString(ReadyQueue theQueue);
+
+void toString(ReadyQueueNode theNode);

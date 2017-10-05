@@ -51,7 +51,7 @@ typedef struct pcb {
  unsigned int pid; // process identification
  enum state_type state; // process state (running, waiting, etc.)
  unsigned int parent; // parent process pid
- unsigned char priority; // 0 is highest – 15 is lowest.
+ unsigned int priority; // 0 is highest – 15 is lowest. This was previously a char.
  unsigned char * mem; // start of process in memory
  unsigned int size; // number of bytes in process
  unsigned char channel_no; // which I/O device or service Q
@@ -61,7 +61,7 @@ typedef struct pcb {
 						// other items to be added as needed.
 } PCB_s;
 
-typedef PCB_s * PCB_p;
+typedef PCB_s * PCB;
 
 typedef struct pidNode {
 	int pid;
@@ -84,20 +84,20 @@ extern pQueue openPids;
 
 
 //function declarations
-PCB_p pcbConstructor();
+PCB pcbConstructor();
 
 pQueue pQueueConstructor();
 
-int pcbInitialize(PCB_p);
+int pcbInitialize(PCB);
 
 int cpuContextInitialize(CPU_context_p);
 
-CPU_context_p getCPUContext(PCB_p);
+CPU_context_p getCPUContext(PCB);
 
-int setCPUContext(CPU_context_p, PCB_p);
+int setCPUContext(CPU_context_p, PCB);
 
-void assignPID(PCB_p);
+void assignPID(PCB);
 
-void pcbDeconstructor(PCB_p);
+void pcbDeconstructor(PCB);
 
-void toString(PCB_p);
+void toString(PCB);
