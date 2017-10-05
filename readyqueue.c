@@ -50,7 +50,7 @@ readyQueue_p readyQueueConstructor() {
 */
 void readyQueueInitializer(readyQueue_p theQueue) {
     theQueue->top = 0;
-
+    theQueue->bottom = 0;
 }
 /*
     q_isEmpty Return 1 if the queue is empty 
@@ -64,19 +64,43 @@ int q_isEmpty(readyQueue_s theQueue) {
 }
 /*
     sets the last nodes next value to the address of the node sent in as a paramater
+    code 1 means it set the node properly.
 */
-int q_enqueue(readyQueue_p theQueue, rdyQueueNode_s theNode) {
-    int errorCode = 0;
-    if(q_isEmpty(*theQueue) == 1) {
-        theQueue->top = &theNode;
+int q_enqueue(readyQueue_p theQueue, rdyQueueNode_p theNode) {
+    int success = 0;
+    if(q_isEmpty(*theQueue)) {
+        theQueue->top = theNode;
+        theQueue->bottom = theNode;
+        success = 1;
+        //set node to top
     } else {
-        rdyQueueNode_p temp = theQueue->top;
-        while (temp->next != 0) {
-            temp = temp->next;
+        //if top has next bottom next == node
+        //top next == node && bottom == node
+        if(theQueue->top->next == 0) {
+            theQueue->top->next = theNode;
+            theQueue->bottom = theNode;
+            success = 1;
+        } else {
+            theQueue->bottom->next == theNode;
+            success = 1;
         }
-        temp->next = &theNode;
     }
-    return errorCode;
+    return success;
+}
+/*
+    Dequeues the first node in the queue and returns the pointer to the caller.
+    then it makes the next in the queue the top of queue.
+*/
+rdyQueueNode_p q_dequeue(readyQueue_p theQueue) {
+    rdyQueueNode_p theTopNode;
+    if(q_isEmpty(*theQueue)) {
+        theTopNode = 0;
+    } else {
+        rdyQueueNode_p temp;
+        theTopNode = theQueue->top;
+        theQueue->top = theQueue->top->next;
+    }
+    return theTopNode;
 }
 
 void main() {
@@ -84,5 +108,19 @@ void main() {
     printf("HELLO WORLD!!!!\n");
     printf("%x\n",&myQueue);                            //Prints location of myQueue
     printf("%x\n",myQueue->top);                        //prints address for pointer to top
-    printf("%d",q_isEmpty(*myQueue));                   //prints result if empty
+    printf("%d\n",q_isEmpty(*myQueue));                   //prints result if empty
+    rdyQueueNode_p myNode1 = rdyQueueNodeConstructor();
+    rdyQueueNode_p myNode2 = rdyQueueNodeConstructor();
+    rdyQueueNode_p myNode3 = rdyQueueNodeConstructor();
+    printf("Nodes %x %x %x\n", myNode1,myNode2,myNode3); //address of all nodes
+    printf("Node %x\n", myNode1);                        //address of first node
+    printf("Node 1 Next = %x\n", myNode1->next);           //address of node 1 next
+    int x = q_enqueue(myQueue, myNode1);                //enqueue node 1 to top
+    x = q_enqueue(myQueue, myNode2);
+    printf("Node 1 Next = %x\n", myNode1->next);          
+    x = q_enqueue(myQueue, myNode3);
+    printf("top = %x\n",myQueue->top);                 //checking top before dequeue
+    q_dequeue(myQueue);                                //dequeing         
+    printf("top = %x\n",myQueue->top);                 //checking new top
+
 }

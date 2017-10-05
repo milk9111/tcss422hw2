@@ -28,6 +28,7 @@ typedef rdyQueueNode_s * rdyQueueNode_p;
 //ReadyQueue
 typedef struct readyQueue {    
     rdyQueueNode_p top;        //Pointer to first Node in queue
+	rdyQueueNode_p bottom;
 } readyQueue_s;
 
 //Defining a pointer to the ReadyQueue
@@ -37,9 +38,9 @@ typedef readyQueue_s * readyQueue_p;
 
 int q_is_empty(readyQueue_s theQueue);
 
-int q_enqueue(readyQueue_p theQueue,rdyQueueNode_s theNode);
+int q_enqueue(readyQueue_p theQueue,rdyQueueNode_p theNode);
 
-int q_dequeue(readyQueue_s theQueue);
+rdyQueueNode_p q_dequeue(readyQueue_p theQueue);
 
 void readyQueueInitializer(readyQueue_p theQueue);
 void rdyQueueNodeInitializer(rdyQueueNode_p theNode);
