@@ -46,15 +46,12 @@ PCB pcbConstructor() {
 int pcbInitialize(PCB thisPCB) {
 	int errorNumber = 0;
 	
-	//time_t t;
-	//srand((unsigned) time(&t));
-	
 	errorNumber = cpuContextInitialize(thisPCB->context);
 	
 	thisPCB->pid = 0;
 	thisPCB->state = new;
 	thisPCB->parent = 0;
-	thisPCB->priority = rand() % 15;
+	thisPCB->priority = rand() % MAX_PID;
 	thisPCB->channel_no = 0;
 	thisPCB->size = sizeof(thisPCB);
 	
@@ -138,47 +135,54 @@ void assignPID(PCB thisPCB) {
 /*
 	Prints out all contents of the PCB and its CPU Context.
 */
-void toStringPCB(PCB thisPCB) {
-	printf("\nPCB values: \n");
-	printf("pid: %d\n", thisPCB->pid);
+void toStringPCB(PCB thisPCB, int showCpu) {
+	printf("contents: ");
+	printf("PID: %d, ", thisPCB->pid);
 	switch(thisPCB->state) {
 		case new:
-			printf("state: new\n");
+			printf("state: new, ");
 			break;
 		case ready:
-			printf("state: ready\n");
+			printf("state: ready, ");
 			break;
 		case running:
-			printf("state: running\n");
+			printf("state: running, ");
 			break;
 		case interrupted:
-			printf("state: interrupted\n");
+			printf("state: interrupted, ");
 			break;
 		case waiting:
-			printf("state: waiting\n");
+			printf("state: waiting, ");
 			break;
 		case halted:
-			printf("state: halted\n");
+			printf("state: halted, ");
 			break;
 	}
-	printf("parent: %d\n", thisPCB->parent);
-	printf("priority: %d\n", thisPCB->priority);
-	printf("mem: 0x%04X\n", thisPCB->mem);
-	printf("size: %d\n", thisPCB->size);
-	printf("channel_no: %d\n", thisPCB->channel_no);
-	printf(" |\n");
-	printf(" +---> CPU context values: \n");
-	printf("\t pc:  %d\n", thisPCB->context->pc);
-	printf("\t ir:  %d\n", thisPCB->context->ir);
-	printf("\t psr: %d\n", thisPCB->context->psr);
-	printf("\t r0:  %d\n", thisPCB->context->r0);
-	printf("\t r1:  %d\n", thisPCB->context->r1);
-	printf("\t r2:  %d\n", thisPCB->context->r2);
-	printf("\t r3:  %d\n", thisPCB->context->r3);
-	printf("\t r4:  %d\n", thisPCB->context->r4);
-	printf("\t r5:  %d\n", thisPCB->context->r5);
-	printf("\t r6:  %d\n", thisPCB->context->r6);
-	printf("\t r7:  %d\n\n", thisPCB->context->r7);
+	printf("parent: %d, ", thisPCB->parent);
+	printf("priority: %d, ", thisPCB->priority);
+	printf("mem: 0x%04X, ", thisPCB->mem);
+	printf("size: %d, ", thisPCB->size);
+	printf("channel_no: %d ", thisPCB->channel_no);
+	
+	if (showCpu) {
+		toStringCPUContext(thisPCB->context);
+	}
+}
+
+
+void toStringCPUContext(CPU_context_p context) {
+	printf(" CPU context values: ");
+	printf("pc:  %d, ", context->pc);
+	printf("ir:  %d, ", context->ir);
+	printf("psr: %d, ", context->psr);
+	printf("r0:  %d, ", context->r0);
+	printf("r1:  %d, ", context->r1);
+	printf("r2:  %d, ", context->r2);
+	printf("r3:  %d, ", context->r3);
+	printf("r4:  %d, ", context->r4);
+	printf("r5:  %d, ", context->r5);
+	printf("r6:  %d, ", context->r6);
+	printf("r7:  %d\r\n", context->r7);
 }
 
 
@@ -201,7 +205,11 @@ pQueue pQueueConstructor() {
 	Frees up the given PCB and puts the pid into the open pid queue.
 */
 void pcbDeconstructor(PCB thisPCB) {
-	if (openPids->top) {
+	free(thisPCB->context);
+	free(thisPCB);
+	
+	//This will be used for the pid queue in later assignments.
+	/*if (openPids->top) {
 		openPids->bottom->next = (pNode) malloc (sizeof(pidNode_s));
 		openPids->bottom = openPids->bottom->next;
 		openPids->bottom->pid = thisPCB->pid;
@@ -214,34 +222,6 @@ void pcbDeconstructor(PCB thisPCB) {
 		openPids->top->pid = thisPCB->pid;
 		free(thisPCB->context);
 		free(thisPCB);
-	}
+	}*/
 }
-
-
-/*void main() {
-	PCB pcbs[MAX_MEM_SIZE + 1];
-	for (int i = 0; i < MAX_MEM_SIZE; i++) {
-		pcbs[i] = pcbConstructor();
-		pcbInitialize(pcbs[i]);
-		assignPID(pcbs[i]);
-		toStringPCB(pcbs[i]);
-	}
-	printf("\n--------------------------------\n");
-	pcbDeconstructor(pcbs[8]);
-	pcbs[8] = NULL;
-	for (int i = 0; i < MAX_MEM_SIZE; i++) {
-		if (pcbs[i]) {
-			toStringPCB(pcbs[i]);
-		}
-	}
-	printf("\n--------------------------------\n");
-	pcbs[MAX_MEM_SIZE] = pcbConstructor();
-	pcbInitialize(pcbs[MAX_MEM_SIZE]);
-	assignPID(pcbs[MAX_MEM_SIZE]);
-	for (int i = 0; i < MAX_MEM_SIZE + 1; i++) {
-		if (pcbs[i]) {
-			toStringPCB(pcbs[i]);
-		}
-	}
-}*/
 

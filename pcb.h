@@ -24,6 +24,7 @@
 //defines
 #define ZERO 0x0000
 #define MAX_MEM_SIZE 20
+#define MAX_PID 15
 
 
 //structs
@@ -100,5 +101,7 @@ void assignPID(PCB thePCB);
 
 void pcbDeconstructor(PCB thePCB);
 
-void toStringPCB(PCB thePCB);
+void toStringPCB(PCB thePCB, int);
+
+void toStringCPUContext(CPU_context_p);
 
