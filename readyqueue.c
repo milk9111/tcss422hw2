@@ -109,12 +109,12 @@ int q_enqueue(ReadyQueue theQueue, ReadyQueueNode theNode) {
         //top next == node && bottom == node
         if(theQueue->top->next == 0) {
             theQueue->top->next = theNode;
-            printf("Enqueue top Next %x the Node %x",theQueue->top->next,theNode);
             theQueue->bottom = theNode;
             success = 1;
         } else {
-			//should this be = instead of ==?
             theQueue->bottom->next = theNode;
+			theQueue->bottom = theQueue->bottom->next;
+			theQueue->bottom->next = NULL;
             success = 1;
         }
     }
@@ -145,7 +145,7 @@ void toStringReadyQueueNode(ReadyQueueNode theNode) {
     if(theNode->next != 0) {
         printf("--->");
     } else {
-        printf("NULL");
+        printf("--->NULL");
     }
 }
 
@@ -155,9 +155,7 @@ void toStringReadyQueue(ReadyQueue theQueue) {
         printf("NULL\n");
     } else {
         ReadyQueueNode temp = theQueue->top;
-        //printf("%x or %x\n",temp->next, theQueue->top->next);
-        while(temp->next != 0) {
-            //printf("while 2\n");
+        while(temp != 0) {
             toStringReadyQueueNode(temp);
             temp = temp->next;
         }

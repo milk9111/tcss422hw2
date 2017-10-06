@@ -23,7 +23,7 @@
 
 //defines
 #define ZERO 0x0000
-#define MAX_MEM_SIZE 10
+#define MAX_MEM_SIZE 20
 
 
 //structs
