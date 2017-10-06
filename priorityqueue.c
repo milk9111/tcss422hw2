@@ -82,7 +82,9 @@ PCB getNextProcess(PriorityQueue thisPQueue) {
 	PCB nextProcess = NULL;
 	for (int i = 0; i < PRIORITY_QUEUE_LENGTH; i++) {
 		if (!q_isEmpty(thisPQueue->priorities[i])) {
-			nextProcess = q_dequeue(thisPQueue->priorities[i])->myPCB;
+			ReadyQueueNode node = q_dequeue(thisPQueue->priorities[i]);
+			nextProcess = node->myPCB;
+			free(node);
 			break;
 		}
 	}
