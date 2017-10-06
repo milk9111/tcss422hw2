@@ -29,6 +29,7 @@ typedef rdyQueueNode_s * ReadyQueueNode;
 typedef struct readyQueue {    
     ReadyQueueNode top;        //Pointer to first Node in queue
 	ReadyQueueNode bottom;
+	int size;
 } readyQueue_s;
 
 //Defining a pointer to the ReadyQueue

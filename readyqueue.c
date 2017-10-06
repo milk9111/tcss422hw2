@@ -149,14 +149,14 @@ void toStringReadyQueueNode(ReadyQueueNode theNode) {
 
 void toStringReadyQueue(ReadyQueue theQueue) {
     if(theQueue->top == 0) {
-        printf("NULL\n");
+        printf("NULL\r\n");
     } else {
         ReadyQueueNode temp = theQueue->top;
         while(temp != 0) {
             toStringReadyQueueNode(temp);
             temp = temp->next;
         }
-		printf("\n");
+		printf("\r\n");
     }
 }
 
