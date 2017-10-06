@@ -126,5 +126,7 @@ void main() {
 	printf("Next Process ID: %d\n", nextProcess->pid);
 	toStringPriorityQueue(pQueue);
 	
-	
+	addProcess(nextProcess, pQueue);
+	printf("Added Process ID: %d\n", nextProcess->pid);
+	toStringPriorityQueue(pQueue);
 }

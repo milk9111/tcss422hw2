@@ -15,7 +15,6 @@
 
 //includes
 #include "readyqueue.h"
-// #include "pcb.h"
 
 
 /*
@@ -115,8 +114,8 @@ int q_enqueue(ReadyQueue theQueue, ReadyQueueNode theNode) {
             theQueue->bottom->next = theNode;
 			theQueue->bottom = theQueue->bottom->next;
 			theQueue->bottom->next = NULL;
-            success = 1;
         }
+            success = 1;
     }
     return success;
 }
@@ -140,7 +139,6 @@ ReadyQueueNode q_dequeue(ReadyQueue theQueue) {
 
 
 void toStringReadyQueueNode(ReadyQueueNode theNode) {
-   // printf("Hererere");
 	printf("|%d|",theNode->myPCB->pid);
     if(theNode->next != 0) {
         printf("--->");
@@ -150,7 +148,6 @@ void toStringReadyQueueNode(ReadyQueueNode theNode) {
 }
 
 void toStringReadyQueue(ReadyQueue theQueue) {
-    //printf("TOSTRINGQUEUE\n");
     if(theQueue->top == 0) {
         printf("NULL\n");
     } else {
@@ -164,7 +161,7 @@ void toStringReadyQueue(ReadyQueue theQueue) {
 }
 
 
-void main() {
+/*void main() {
     ReadyQueue myQueue= readyQueueConstructor();
     printf("HELLO WORLD!!!!\n");
     printf("%x\n",&myQueue);                            //Prints location of myQueue
@@ -189,5 +186,5 @@ void main() {
     // printf("\n%x\n",myQueue->top);
     printf("Completed");
 
-}
+}*/
 
