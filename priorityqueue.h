@@ -7,10 +7,8 @@
 	is being held within the ReadyQueue, and the PriorityQueue holds 16 ReadyQueues. 
 	This is going to be used for scheduling in the final OS project.
 	
-	In this file we are declaring the Nodes and the Ready Queue to be used for storing the 
-    PCB pointers during runtime operation. The Node had a pointer to the PCB and the next node.
-    The Queue has a pointer for the node at the top and a pointer to the node at the end of the 
-    queue.
+	In this file we are declaring the PriorityQueue struct, its length, and the functions
+	it will use.
 */
 
 //includes
@@ -18,7 +16,7 @@
 
 
 //defines
-#define PRIORITY_QUEUE_LENGTH 16 
+#define PRIORITY_QUEUE_LENGTH 16
 
 
 //structs
