@@ -1,4 +1,9 @@
 /*
+	10/6/2017
+	Authors: Connor Lundberg
+	
+	This is a simple test file to create two separate PCB objects and show that
+	they both receive different PIDs and priorities.
 */
 
 #include "pcb.h"

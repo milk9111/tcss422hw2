@@ -1,6 +1,6 @@
 /*
 	10/2/2017
-	Authors: Connor Lundberg, Gardner Gomes
+	Authors: Gardner Gomes, Connor Lundberg
 	
 	In this assignment we are creating a PCB (Process Control Block), ReadyQueue, and 
 	PriorityQueue. Each is made in sequence and then used to make the next one. The PCB
@@ -51,6 +51,8 @@ void readyQueueDeconstructor(ReadyQueue theQueue);
 int q_isEmpty(ReadyQueue theQueue);
 
 int q_enqueue(ReadyQueue theQueue, ReadyQueueNode theNode);
+
+int getSize(ReadyQueue theQueue);
 
 ReadyQueueNode q_dequeue(ReadyQueue theQueue);
 

@@ -96,35 +96,8 @@ PCB getNextProcess(PriorityQueue thisPQueue) {
 void toStringPriorityQueue(PriorityQueue thisPQueue) {
 	printf("\r\n");
 	for (int i = 0; i < PRIORITY_QUEUE_LENGTH; i++) {
-		printf("%2d: ", i);
+		printf("%2d: Count=%d: ", i, getSize(thisPQueue->priorities[i]));
 		toStringReadyQueue(thisPQueue->priorities[i]);
 	}
 	printf("\r\n");
 }
-
-
-/*void main() {
-	PriorityQueue pQueue = priorityQueueConstructor();
-	PCB pcb[MAX_MEM_SIZE];
-	for (int i = 0; i < MAX_MEM_SIZE; i++) {
-		pcb[i] = pcbConstructor();
-		addProcess(pcb[i], pQueue);
-	}
-	toStringPriorityQueue(pQueue);
-	
-	PCB nextProcess = getNextProcess(pQueue);
-	printf("Next Process ID: %d\n", nextProcess->pid);
-	toStringPriorityQueue(pQueue);
-	
-	nextProcess = getNextProcess(pQueue);
-	printf("Next Process ID: %d\n", nextProcess->pid);
-	toStringPriorityQueue(pQueue);
-	
-	nextProcess = getNextProcess(pQueue);
-	printf("Next Process ID: %d\n", nextProcess->pid);
-	toStringPriorityQueue(pQueue);
-	
-	addProcess(nextProcess, pQueue);
-	printf("Added Process ID: %d\n", nextProcess->pid);
-	toStringPriorityQueue(pQueue);
-}*/

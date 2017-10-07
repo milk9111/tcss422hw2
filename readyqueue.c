@@ -1,6 +1,6 @@
 /*
 	10/1/2017
-	Authors: Connor Lundberg, Gardner Gomes
+	Authors: Gardner Gomes, Connor Lundberg
 	
 	In this assignment we are creating a PCB (Process Control Block), ReadyQueue, and 
 	PriorityQueue. Each is made in sequence and then used to make the next one. The PCB
@@ -148,6 +148,12 @@ ReadyQueueNode q_dequeue(ReadyQueue theQueue) {
 }
 
 
+int getSize (ReadyQueue theQueue) {
+	int size = theQueue->size;
+	return size;
+}
+
+
 void toStringReadyQueueNode(ReadyQueueNode theNode) {
 	printf("|%d|",theNode->myPCB->pid);
     if(theNode->next != 0) {
@@ -169,32 +175,4 @@ void toStringReadyQueue(ReadyQueue theQueue) {
 		printf("\r\n");
     }
 }
-
-
-/*void main() {
-    ReadyQueue myQueue= readyQueueConstructor();
-    printf("HELLO WORLD!!!!\n");
-    printf("%x\n",&myQueue);                            //Prints location of myQueue
-    printf("%x\n",myQueue->top);                        //prints address for pointer to top
-    printf("%d\n",q_isEmpty(myQueue));                   //prints result if empty
-    ReadyQueueNode myNode1 = rdyQueueNodeConstructor();
-    ReadyQueueNode myNode2 = rdyQueueNodeConstructor();
-    ReadyQueueNode myNode3 = rdyQueueNodeConstructor();
-    printf("Nodes %x %x %x\n", myNode1,myNode2,myNode3); //address of all nodes
-    printf("Node %x\n", myNode1);                        //address of first node
-    printf("Node 1 Next = %x\n", myNode1->next);           //address of node 1 next
-    int x = q_enqueue(myQueue, myNode1);                //enqueue node 1 to top
-    x = q_enqueue(myQueue, myNode2);
-    printf("Node 1 Next = %x\n", myNode1->next);          
-    x = q_enqueue(myQueue, myNode3);
-    printf("top = %x\n",myQueue->top);                 //checking top before dequeue
-    q_dequeue(myQueue);                                //dequeing         
-    printf("top next = %x\n",myQueue->top->next);                 //checking new top
-
- // toStringReadyQueueNode(myNode1);
-    toStringReadyQueue(myQueue);
-    // printf("\n%x\n",myQueue->top);
-    printf("Completed");
-
-}*/
 

@@ -1,1331 +1,441 @@
 Adding 10 more PCBs
 Before dequeue:
 
- 0: |3|--->NULL
- 1: |0|--->|5|--->|6|--->NULL
- 2: NULL
- 3: NULL
- 4: |2|--->|4|--->|9|--->NULL
- 5: NULL
- 6: NULL
- 7: NULL
- 8: NULL
- 9: |7|--->NULL
-10: NULL
-11: NULL
-12: |1|--->NULL
-13: |8|--->NULL
-14: NULL
-15: NULL
+ 0: Count=4: |3|--->|4|--->|5|--->|9|--->NULL
+ 1: Count=2: |6|--->|8|--->NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=0: NULL
+ 5: Count=0: NULL
+ 6: Count=0: NULL
+ 7: Count=0: NULL
+ 8: Count=1: |2|--->NULL
+ 9: Count=2: |1|--->|7|--->NULL
+10: Count=0: NULL
+11: Count=1: |0|--->NULL
+12: Count=0: NULL
+13: Count=0: NULL
+14: Count=0: NULL
+15: Count=0: NULL
 
-Dequeued contents: PID: 3, state: new, parent: 0, priority: 0, mem: 0x288B0, size: 8, channel_no: 0 
-Dequeued contents: PID: 0, state: new, parent: 0, priority: 1, mem: 0x28700, size: 8, channel_no: 0 
-Dequeued contents: PID: 5, state: new, parent: 0, priority: 1, mem: 0x289D0, size: 8, channel_no: 0 
-Dequeued contents: PID: 6, state: new, parent: 0, priority: 1, mem: 0x28A60, size: 8, channel_no: 0 
-Dequeued contents: PID: 2, state: new, parent: 0, priority: 4, mem: 0x28820, size: 8, channel_no: 0 
+Dequeued contents: PID: 3, state: running, parent: 0, priority: 0, mem: 0x288A0, size: 8, channel_no: 0 
+Dequeued contents: PID: 4, state: running, parent: 0, priority: 0, mem: 0x28930, size: 8, channel_no: 0 
+Dequeued contents: PID: 5, state: running, parent: 0, priority: 0, mem: 0x289C0, size: 8, channel_no: 0 
+Dequeued contents: PID: 9, state: running, parent: 0, priority: 0, mem: 0x28C00, size: 8, channel_no: 0 
 
 After dequeue:
 
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: |4|--->|9|--->NULL
- 5: NULL
- 6: NULL
- 7: NULL
- 8: NULL
- 9: |7|--->NULL
-10: NULL
-11: NULL
-12: |1|--->NULL
-13: |8|--->NULL
-14: NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=2: |6|--->|8|--->NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=0: NULL
+ 5: Count=0: NULL
+ 6: Count=0: NULL
+ 7: Count=0: NULL
+ 8: Count=1: |2|--->NULL
+ 9: Count=2: |1|--->|7|--->NULL
+10: Count=0: NULL
+11: Count=1: |0|--->NULL
+12: Count=0: NULL
+13: Count=0: NULL
+14: Count=0: NULL
+15: Count=0: NULL
 
 Adding 10 more PCBs
 Before dequeue:
 
- 0: NULL
- 1: |11|--->|12|--->|14|--->NULL
- 2: |16|--->NULL
- 3: NULL
- 4: |4|--->|9|--->|10|--->NULL
- 5: |13|--->NULL
- 6: NULL
- 7: NULL
- 8: NULL
- 9: |7|--->|15|--->|18|--->NULL
-10: NULL
-11: |17|--->NULL
-12: |1|--->|19|--->NULL
-13: |8|--->NULL
-14: NULL
-15: NULL
+ 0: Count=1: |10|--->NULL
+ 1: Count=2: |6|--->|8|--->NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=0: NULL
+ 5: Count=0: NULL
+ 6: Count=2: |12|--->|17|--->NULL
+ 7: Count=2: |18|--->|19|--->NULL
+ 8: Count=2: |2|--->|11|--->NULL
+ 9: Count=2: |1|--->|7|--->NULL
+10: Count=2: |14|--->|15|--->NULL
+11: Count=1: |0|--->NULL
+12: Count=0: NULL
+13: Count=1: |13|--->NULL
+14: Count=1: |16|--->NULL
+15: Count=0: NULL
 
-Dequeued contents: PID: 11, state: new, parent: 0, priority: 1, mem: 0x28D10, size: 8, channel_no: 0 
-Dequeued contents: PID: 12, state: new, parent: 0, priority: 1, mem: 0x28D80, size: 8, channel_no: 0 
-Dequeued contents: PID: 14, state: new, parent: 0, priority: 1, mem: 0x28E60, size: 8, channel_no: 0 
-Dequeued contents: PID: 16, state: new, parent: 0, priority: 2, mem: 0x28F60, size: 8, channel_no: 0 
+Dequeued contents: PID: 10, state: running, parent: 0, priority: 0, mem: 0x28C70, size: 8, channel_no: 0 
+Dequeued contents: PID: 6, state: running, parent: 0, priority: 1, mem: 0x28A50, size: 8, channel_no: 0 
+Dequeued contents: PID: 8, state: running, parent: 0, priority: 1, mem: 0x28B70, size: 8, channel_no: 0 
+Dequeued contents: PID: 12, state: running, parent: 0, priority: 6, mem: 0x28D50, size: 8, channel_no: 0 
 
 After dequeue:
 
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: |4|--->|9|--->|10|--->NULL
- 5: |13|--->NULL
- 6: NULL
- 7: NULL
- 8: NULL
- 9: |7|--->|15|--->|18|--->NULL
-10: NULL
-11: |17|--->NULL
-12: |1|--->|19|--->NULL
-13: |8|--->NULL
-14: NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=0: NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=0: NULL
+ 5: Count=0: NULL
+ 6: Count=1: |17|--->NULL
+ 7: Count=2: |18|--->|19|--->NULL
+ 8: Count=2: |2|--->|11|--->NULL
+ 9: Count=2: |1|--->|7|--->NULL
+10: Count=2: |14|--->|15|--->NULL
+11: Count=1: |0|--->NULL
+12: Count=0: NULL
+13: Count=1: |13|--->NULL
+14: Count=1: |16|--->NULL
+15: Count=0: NULL
 
 Adding 10 more PCBs
 Before dequeue:
 
- 0: |23|--->NULL
- 1: |20|--->|28|--->NULL
- 2: NULL
- 3: |24|--->NULL
- 4: |4|--->|9|--->|10|--->|29|--->NULL
- 5: |13|--->NULL
- 6: |26|--->NULL
- 7: |25|--->NULL
- 8: |21|--->NULL
- 9: |7|--->|15|--->|18|--->NULL
-10: |22|--->NULL
-11: |17|--->NULL
-12: |1|--->|19|--->NULL
-13: |8|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=1: |20|--->NULL
+ 1: Count=2: |28|--->|29|--->NULL
+ 2: Count=0: NULL
+ 3: Count=1: |27|--->NULL
+ 4: Count=1: |26|--->NULL
+ 5: Count=0: NULL
+ 6: Count=1: |17|--->NULL
+ 7: Count=4: |18|--->|19|--->|21|--->|25|--->NULL
+ 8: Count=3: |2|--->|11|--->|22|--->NULL
+ 9: Count=2: |1|--->|7|--->NULL
+10: Count=2: |14|--->|15|--->NULL
+11: Count=1: |0|--->NULL
+12: Count=0: NULL
+13: Count=2: |13|--->|24|--->NULL
+14: Count=2: |16|--->|23|--->NULL
+15: Count=0: NULL
 
-Dequeued contents: PID: 23, state: new, parent: 0, priority: 0, mem: 0x292F0, size: 8, channel_no: 0 
-Dequeued contents: PID: 20, state: new, parent: 0, priority: 1, mem: 0x291A0, size: 8, channel_no: 0 
-Dequeued contents: PID: 28, state: new, parent: 0, priority: 1, mem: 0x295A0, size: 8, channel_no: 0 
-Dequeued contents: PID: 24, state: new, parent: 0, priority: 3, mem: 0x29360, size: 8, channel_no: 0 
-Dequeued contents: PID: 4, state: new, parent: 0, priority: 4, mem: 0x28940, size: 8, channel_no: 0 
+Dequeued contents: PID: 20, state: running, parent: 0, priority: 0, mem: 0x291B0, size: 8, channel_no: 0 
+Dequeued contents: PID: 28, state: running, parent: 0, priority: 1, mem: 0x295B0, size: 8, channel_no: 0 
+Dequeued contents: PID: 29, state: running, parent: 0, priority: 1, mem: 0x29640, size: 8, channel_no: 0 
+Dequeued contents: PID: 27, state: running, parent: 0, priority: 3, mem: 0x29520, size: 8, channel_no: 0 
 
 After dequeue:
 
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: |9|--->|10|--->|29|--->NULL
- 5: |13|--->NULL
- 6: |26|--->NULL
- 7: |25|--->NULL
- 8: |21|--->NULL
- 9: |7|--->|15|--->|18|--->NULL
-10: |22|--->NULL
-11: |17|--->NULL
-12: |1|--->|19|--->NULL
-13: |8|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=0: NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=1: |26|--->NULL
+ 5: Count=0: NULL
+ 6: Count=1: |17|--->NULL
+ 7: Count=4: |18|--->|19|--->|21|--->|25|--->NULL
+ 8: Count=3: |2|--->|11|--->|22|--->NULL
+ 9: Count=2: |1|--->|7|--->NULL
+10: Count=2: |14|--->|15|--->NULL
+11: Count=1: |0|--->NULL
+12: Count=0: NULL
+13: Count=2: |13|--->|24|--->NULL
+14: Count=2: |16|--->|23|--->NULL
+15: Count=0: NULL
 
 Adding 10 more PCBs
 Before dequeue:
 
- 0: NULL
- 1: |33|--->|34|--->|37|--->|38|--->NULL
- 2: |32|--->NULL
- 3: |35|--->NULL
- 4: |9|--->|10|--->|29|--->|31|--->|39|--->NULL
- 5: |13|--->NULL
- 6: |26|--->NULL
- 7: |25|--->NULL
- 8: |21|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->NULL
-10: |22|--->|36|--->NULL
-11: |17|--->NULL
-12: |1|--->|19|--->NULL
-13: |8|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=1: |35|--->NULL
+ 2: Count=1: |32|--->NULL
+ 3: Count=0: NULL
+ 4: Count=1: |26|--->NULL
+ 5: Count=1: |39|--->NULL
+ 6: Count=2: |17|--->|34|--->NULL
+ 7: Count=4: |18|--->|19|--->|21|--->|25|--->NULL
+ 8: Count=3: |2|--->|11|--->|22|--->NULL
+ 9: Count=2: |1|--->|7|--->NULL
+10: Count=3: |14|--->|15|--->|33|--->NULL
+11: Count=1: |0|--->NULL
+12: Count=1: |37|--->NULL
+13: Count=4: |13|--->|24|--->|31|--->|36|--->NULL
+14: Count=4: |16|--->|23|--->|30|--->|38|--->NULL
+15: Count=0: NULL
 
-Dequeued contents: PID: 33, state: new, parent: 0, priority: 1, mem: 0x29810, size: 8, channel_no: 0 
-Dequeued contents: PID: 34, state: new, parent: 0, priority: 1, mem: 0x29880, size: 8, channel_no: 0 
-Dequeued contents: PID: 37, state: new, parent: 0, priority: 1, mem: 0x29A10, size: 8, channel_no: 0 
-Dequeued contents: PID: 38, state: new, parent: 0, priority: 1, mem: 0x29AA0, size: 8, channel_no: 0 
+Dequeued contents: PID: 35, state: running, parent: 0, priority: 1, mem: 0x29920, size: 8, channel_no: 0 
+Dequeued contents: PID: 32, state: running, parent: 0, priority: 2, mem: 0x29790, size: 8, channel_no: 0 
+Dequeued contents: PID: 26, state: running, parent: 0, priority: 4, mem: 0x29490, size: 8, channel_no: 0 
+Dequeued contents: PID: 39, state: running, parent: 0, priority: 5, mem: 0x29B60, size: 8, channel_no: 0 
 
 After dequeue:
 
- 0: NULL
- 1: NULL
- 2: |32|--->NULL
- 3: |35|--->NULL
- 4: |9|--->|10|--->|29|--->|31|--->|39|--->NULL
- 5: |13|--->NULL
- 6: |26|--->NULL
- 7: |25|--->NULL
- 8: |21|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->NULL
-10: |22|--->|36|--->NULL
-11: |17|--->NULL
-12: |1|--->|19|--->NULL
-13: |8|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=0: NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=0: NULL
+ 5: Count=0: NULL
+ 6: Count=2: |17|--->|34|--->NULL
+ 7: Count=4: |18|--->|19|--->|21|--->|25|--->NULL
+ 8: Count=3: |2|--->|11|--->|22|--->NULL
+ 9: Count=2: |1|--->|7|--->NULL
+10: Count=3: |14|--->|15|--->|33|--->NULL
+11: Count=1: |0|--->NULL
+12: Count=1: |37|--->NULL
+13: Count=4: |13|--->|24|--->|31|--->|36|--->NULL
+14: Count=4: |16|--->|23|--->|30|--->|38|--->NULL
+15: Count=0: NULL
 
 Adding 10 more PCBs
 Before dequeue:
 
- 0: |48|--->NULL
- 1: NULL
- 2: |32|--->NULL
- 3: |35|--->NULL
- 4: |9|--->|10|--->|29|--->|31|--->|39|--->NULL
- 5: |13|--->|47|--->NULL
- 6: |26|--->|40|--->|41|--->|46|--->NULL
- 7: |25|--->|42|--->NULL
- 8: |21|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->|44|--->NULL
-10: |22|--->|36|--->NULL
-11: |17|--->|45|--->NULL
-12: |1|--->|19|--->NULL
-13: |8|--->|43|--->|49|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=1: |47|--->NULL
+ 2: Count=0: NULL
+ 3: Count=2: |42|--->|45|--->NULL
+ 4: Count=2: |41|--->|49|--->NULL
+ 5: Count=1: |48|--->NULL
+ 6: Count=2: |17|--->|34|--->NULL
+ 7: Count=4: |18|--->|19|--->|21|--->|25|--->NULL
+ 8: Count=5: |2|--->|11|--->|22|--->|43|--->|46|--->NULL
+ 9: Count=2: |1|--->|7|--->NULL
+10: Count=3: |14|--->|15|--->|33|--->NULL
+11: Count=1: |0|--->NULL
+12: Count=2: |37|--->|40|--->NULL
+13: Count=4: |13|--->|24|--->|31|--->|36|--->NULL
+14: Count=5: |16|--->|23|--->|30|--->|38|--->|44|--->NULL
+15: Count=0: NULL
 
-Dequeued contents: PID: 48, state: new, parent: 0, priority: 0, mem: 0x29FC0, size: 8, channel_no: 0 
-Dequeued contents: PID: 32, state: new, parent: 0, priority: 2, mem: 0x297A0, size: 8, channel_no: 0 
-Dequeued contents: PID: 35, state: new, parent: 0, priority: 3, mem: 0x298F0, size: 8, channel_no: 0 
-Dequeued contents: PID: 9, state: new, parent: 0, priority: 4, mem: 0x28C10, size: 8, channel_no: 0 
+Dequeued contents: PID: 47, state: running, parent: 0, priority: 1, mem: 0x29F60, size: 8, channel_no: 0 
+Dequeued contents: PID: 42, state: running, parent: 0, priority: 3, mem: 0x29CB0, size: 8, channel_no: 0 
+Dequeued contents: PID: 45, state: running, parent: 0, priority: 3, mem: 0x29E40, size: 8, channel_no: 0 
+Dequeued contents: PID: 41, state: running, parent: 0, priority: 4, mem: 0x29C40, size: 8, channel_no: 0 
 
 After dequeue:
 
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: |10|--->|29|--->|31|--->|39|--->NULL
- 5: |13|--->|47|--->NULL
- 6: |26|--->|40|--->|41|--->|46|--->NULL
- 7: |25|--->|42|--->NULL
- 8: |21|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->|44|--->NULL
-10: |22|--->|36|--->NULL
-11: |17|--->|45|--->NULL
-12: |1|--->|19|--->NULL
-13: |8|--->|43|--->|49|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=0: NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=1: |49|--->NULL
+ 5: Count=1: |48|--->NULL
+ 6: Count=2: |17|--->|34|--->NULL
+ 7: Count=4: |18|--->|19|--->|21|--->|25|--->NULL
+ 8: Count=5: |2|--->|11|--->|22|--->|43|--->|46|--->NULL
+ 9: Count=2: |1|--->|7|--->NULL
+10: Count=3: |14|--->|15|--->|33|--->NULL
+11: Count=1: |0|--->NULL
+12: Count=2: |37|--->|40|--->NULL
+13: Count=4: |13|--->|24|--->|31|--->|36|--->NULL
+14: Count=5: |16|--->|23|--->|30|--->|38|--->|44|--->NULL
+15: Count=0: NULL
 
 Adding 10 more PCBs
 Before dequeue:
 
- 0: |53|--->NULL
- 1: NULL
- 2: |52|--->NULL
- 3: NULL
- 4: |10|--->|29|--->|31|--->|39|--->NULL
- 5: |13|--->|47|--->|50|--->|58|--->NULL
- 6: |26|--->|40|--->|41|--->|46|--->NULL
- 7: |25|--->|42|--->NULL
- 8: |21|--->|59|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->|44|--->|54|--->|56|--->NULL
-10: |22|--->|36|--->|51|--->NULL
-11: |17|--->|45|--->|57|--->NULL
-12: |1|--->|19|--->|55|--->NULL
-13: |8|--->|43|--->|49|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=1: |55|--->NULL
+ 1: Count=0: NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=4: |49|--->|52|--->|53|--->|58|--->NULL
+ 5: Count=2: |48|--->|57|--->NULL
+ 6: Count=3: |17|--->|34|--->|50|--->NULL
+ 7: Count=5: |18|--->|19|--->|21|--->|25|--->|59|--->NULL
+ 8: Count=6: |2|--->|11|--->|22|--->|43|--->|46|--->|56|--->NULL
+ 9: Count=3: |1|--->|7|--->|54|--->NULL
+10: Count=3: |14|--->|15|--->|33|--->NULL
+11: Count=1: |0|--->NULL
+12: Count=2: |37|--->|40|--->NULL
+13: Count=4: |13|--->|24|--->|31|--->|36|--->NULL
+14: Count=6: |16|--->|23|--->|30|--->|38|--->|44|--->|51|--->NULL
+15: Count=0: NULL
 
-Dequeued contents: PID: 53, state: new, parent: 0, priority: 0, mem: 0x2A230, size: 8, channel_no: 0 
-Dequeued contents: PID: 52, state: new, parent: 0, priority: 2, mem: 0x2A1C0, size: 8, channel_no: 0 
-Dequeued contents: PID: 10, state: new, parent: 0, priority: 4, mem: 0x28CA0, size: 8, channel_no: 0 
-Dequeued contents: PID: 29, state: new, parent: 0, priority: 4, mem: 0x29630, size: 8, channel_no: 0 
+Dequeued contents: PID: 55, state: running, parent: 0, priority: 0, mem: 0x2A360, size: 8, channel_no: 0 
+Dequeued contents: PID: 49, state: running, parent: 0, priority: 4, mem: 0x2A080, size: 8, channel_no: 0 
+Dequeued contents: PID: 52, state: running, parent: 0, priority: 4, mem: 0x2A1F0, size: 8, channel_no: 0 
+Dequeued contents: PID: 53, state: running, parent: 0, priority: 4, mem: 0x2A260, size: 8, channel_no: 0 
 
 After dequeue:
 
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: |31|--->|39|--->NULL
- 5: |13|--->|47|--->|50|--->|58|--->NULL
- 6: |26|--->|40|--->|41|--->|46|--->NULL
- 7: |25|--->|42|--->NULL
- 8: |21|--->|59|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->|44|--->|54|--->|56|--->NULL
-10: |22|--->|36|--->|51|--->NULL
-11: |17|--->|45|--->|57|--->NULL
-12: |1|--->|19|--->|55|--->NULL
-13: |8|--->|43|--->|49|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=0: NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=1: |58|--->NULL
+ 5: Count=2: |48|--->|57|--->NULL
+ 6: Count=3: |17|--->|34|--->|50|--->NULL
+ 7: Count=5: |18|--->|19|--->|21|--->|25|--->|59|--->NULL
+ 8: Count=6: |2|--->|11|--->|22|--->|43|--->|46|--->|56|--->NULL
+ 9: Count=3: |1|--->|7|--->|54|--->NULL
+10: Count=3: |14|--->|15|--->|33|--->NULL
+11: Count=1: |0|--->NULL
+12: Count=2: |37|--->|40|--->NULL
+13: Count=4: |13|--->|24|--->|31|--->|36|--->NULL
+14: Count=6: |16|--->|23|--->|30|--->|38|--->|44|--->|51|--->NULL
+15: Count=0: NULL
 
 Adding 10 more PCBs
 Before dequeue:
 
- 0: |66|--->|68|--->NULL
- 1: |62|--->NULL
- 2: |61|--->NULL
- 3: |63|--->NULL
- 4: |31|--->|39|--->|60|--->|67|--->NULL
- 5: |13|--->|47|--->|50|--->|58|--->NULL
- 6: |26|--->|40|--->|41|--->|46|--->NULL
- 7: |25|--->|42|--->|64|--->NULL
- 8: |21|--->|59|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->|44|--->|54|--->|56|--->|65|--->NULL
-10: |22|--->|36|--->|51|--->NULL
-11: |17|--->|45|--->|57|--->NULL
-12: |1|--->|19|--->|55|--->NULL
-13: |8|--->|43|--->|49|--->|69|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=1: |64|--->NULL
+ 1: Count=3: |60|--->|63|--->|67|--->NULL
+ 2: Count=1: |61|--->NULL
+ 3: Count=2: |62|--->|66|--->NULL
+ 4: Count=1: |58|--->NULL
+ 5: Count=2: |48|--->|57|--->NULL
+ 6: Count=3: |17|--->|34|--->|50|--->NULL
+ 7: Count=5: |18|--->|19|--->|21|--->|25|--->|59|--->NULL
+ 8: Count=8: |2|--->|11|--->|22|--->|43|--->|46|--->|56|--->|68|--->|69|--->NULL
+ 9: Count=3: |1|--->|7|--->|54|--->NULL
+10: Count=3: |14|--->|15|--->|33|--->NULL
+11: Count=1: |0|--->NULL
+12: Count=2: |37|--->|40|--->NULL
+13: Count=5: |13|--->|24|--->|31|--->|36|--->|65|--->NULL
+14: Count=6: |16|--->|23|--->|30|--->|38|--->|44|--->|51|--->NULL
+15: Count=0: NULL
 
-Dequeued contents: PID: 66, state: new, parent: 0, priority: 0, mem: 0x2A8E0, size: 8, channel_no: 0 
-Dequeued contents: PID: 68, state: new, parent: 0, priority: 0, mem: 0x2AA00, size: 8, channel_no: 0 
-Dequeued contents: PID: 62, state: new, parent: 0, priority: 1, mem: 0x2A6E0, size: 8, channel_no: 0 
-Dequeued contents: PID: 61, state: new, parent: 0, priority: 2, mem: 0x2A670, size: 8, channel_no: 0 
+Dequeued contents: PID: 64, state: running, parent: 0, priority: 0, mem: 0x2A7F0, size: 8, channel_no: 0 
+Dequeued contents: PID: 60, state: running, parent: 0, priority: 1, mem: 0x2A630, size: 8, channel_no: 0 
+Dequeued contents: PID: 63, state: running, parent: 0, priority: 1, mem: 0x2A780, size: 8, channel_no: 0 
+Dequeued contents: PID: 67, state: running, parent: 0, priority: 1, mem: 0x2A9A0, size: 8, channel_no: 0 
 
 After dequeue:
 
- 0: NULL
- 1: NULL
- 2: NULL
- 3: |63|--->NULL
- 4: |31|--->|39|--->|60|--->|67|--->NULL
- 5: |13|--->|47|--->|50|--->|58|--->NULL
- 6: |26|--->|40|--->|41|--->|46|--->NULL
- 7: |25|--->|42|--->|64|--->NULL
- 8: |21|--->|59|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->|44|--->|54|--->|56|--->|65|--->NULL
-10: |22|--->|36|--->|51|--->NULL
-11: |17|--->|45|--->|57|--->NULL
-12: |1|--->|19|--->|55|--->NULL
-13: |8|--->|43|--->|49|--->|69|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=0: NULL
+ 2: Count=1: |61|--->NULL
+ 3: Count=2: |62|--->|66|--->NULL
+ 4: Count=1: |58|--->NULL
+ 5: Count=2: |48|--->|57|--->NULL
+ 6: Count=3: |17|--->|34|--->|50|--->NULL
+ 7: Count=5: |18|--->|19|--->|21|--->|25|--->|59|--->NULL
+ 8: Count=8: |2|--->|11|--->|22|--->|43|--->|46|--->|56|--->|68|--->|69|--->NULL
+ 9: Count=3: |1|--->|7|--->|54|--->NULL
+10: Count=3: |14|--->|15|--->|33|--->NULL
+11: Count=1: |0|--->NULL
+12: Count=2: |37|--->|40|--->NULL
+13: Count=5: |13|--->|24|--->|31|--->|36|--->|65|--->NULL
+14: Count=6: |16|--->|23|--->|30|--->|38|--->|44|--->|51|--->NULL
+15: Count=0: NULL
 
 Adding 10 more PCBs
 Before dequeue:
 
- 0: |70|--->|73|--->|79|--->NULL
- 1: NULL
- 2: NULL
- 3: |63|--->|71|--->|72|--->|74|--->NULL
- 4: |31|--->|39|--->|60|--->|67|--->NULL
- 5: |13|--->|47|--->|50|--->|58|--->NULL
- 6: |26|--->|40|--->|41|--->|46|--->NULL
- 7: |25|--->|42|--->|64|--->NULL
- 8: |21|--->|59|--->|75|--->|78|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->|44|--->|54|--->|56|--->|65|--->NULL
-10: |22|--->|36|--->|51|--->NULL
-11: |17|--->|45|--->|57|--->|76|--->NULL
-12: |1|--->|19|--->|55|--->NULL
-13: |8|--->|43|--->|49|--->|69|--->|77|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=1: |78|--->NULL
+ 1: Count=0: NULL
+ 2: Count=1: |61|--->NULL
+ 3: Count=2: |62|--->|66|--->NULL
+ 4: Count=2: |58|--->|70|--->NULL
+ 5: Count=3: |48|--->|57|--->|77|--->NULL
+ 6: Count=3: |17|--->|34|--->|50|--->NULL
+ 7: Count=7: |18|--->|19|--->|21|--->|25|--->|59|--->|71|--->|79|--->NULL
+ 8: Count=9: |2|--->|11|--->|22|--->|43|--->|46|--->|56|--->|68|--->|69|--->|74|--->NULL
+ 9: Count=3: |1|--->|7|--->|54|--->NULL
+10: Count=4: |14|--->|15|--->|33|--->|76|--->NULL
+11: Count=3: |0|--->|73|--->|75|--->NULL
+12: Count=3: |37|--->|40|--->|72|--->NULL
+13: Count=5: |13|--->|24|--->|31|--->|36|--->|65|--->NULL
+14: Count=6: |16|--->|23|--->|30|--->|38|--->|44|--->|51|--->NULL
+15: Count=0: NULL
 
-Dequeued contents: PID: 70, state: new, parent: 0, priority: 0, mem: 0x2AB20, size: 8, channel_no: 0 
-Dequeued contents: PID: 73, state: new, parent: 0, priority: 0, mem: 0x2AC70, size: 8, channel_no: 0 
-Dequeued contents: PID: 79, state: new, parent: 0, priority: 0, mem: 0x2AFB0, size: 8, channel_no: 0 
-Dequeued contents: PID: 63, state: new, parent: 0, priority: 3, mem: 0x2A750, size: 8, channel_no: 0 
+Dequeued contents: PID: 78, state: running, parent: 0, priority: 0, mem: 0x2AF50, size: 8, channel_no: 0 
+Dequeued contents: PID: 61, state: running, parent: 0, priority: 2, mem: 0x2A6A0, size: 8, channel_no: 0 
+Dequeued contents: PID: 62, state: running, parent: 0, priority: 3, mem: 0x2A710, size: 8, channel_no: 0 
+Dequeued contents: PID: 66, state: running, parent: 0, priority: 3, mem: 0x2A910, size: 8, channel_no: 0 
 
 After dequeue:
 
- 0: NULL
- 1: NULL
- 2: NULL
- 3: |71|--->|72|--->|74|--->NULL
- 4: |31|--->|39|--->|60|--->|67|--->NULL
- 5: |13|--->|47|--->|50|--->|58|--->NULL
- 6: |26|--->|40|--->|41|--->|46|--->NULL
- 7: |25|--->|42|--->|64|--->NULL
- 8: |21|--->|59|--->|75|--->|78|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->|44|--->|54|--->|56|--->|65|--->NULL
-10: |22|--->|36|--->|51|--->NULL
-11: |17|--->|45|--->|57|--->|76|--->NULL
-12: |1|--->|19|--->|55|--->NULL
-13: |8|--->|43|--->|49|--->|69|--->|77|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=0: NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=2: |58|--->|70|--->NULL
+ 5: Count=3: |48|--->|57|--->|77|--->NULL
+ 6: Count=3: |17|--->|34|--->|50|--->NULL
+ 7: Count=7: |18|--->|19|--->|21|--->|25|--->|59|--->|71|--->|79|--->NULL
+ 8: Count=9: |2|--->|11|--->|22|--->|43|--->|46|--->|56|--->|68|--->|69|--->|74|--->NULL
+ 9: Count=3: |1|--->|7|--->|54|--->NULL
+10: Count=4: |14|--->|15|--->|33|--->|76|--->NULL
+11: Count=3: |0|--->|73|--->|75|--->NULL
+12: Count=3: |37|--->|40|--->|72|--->NULL
+13: Count=5: |13|--->|24|--->|31|--->|36|--->|65|--->NULL
+14: Count=6: |16|--->|23|--->|30|--->|38|--->|44|--->|51|--->NULL
+15: Count=0: NULL
 
 Adding 10 more PCBs
 Before dequeue:
 
- 0: |86|--->NULL
- 1: NULL
- 2: NULL
- 3: |71|--->|72|--->|74|--->|80|--->NULL
- 4: |31|--->|39|--->|60|--->|67|--->NULL
- 5: |13|--->|47|--->|50|--->|58|--->NULL
- 6: |26|--->|40|--->|41|--->|46|--->NULL
- 7: |25|--->|42|--->|64|--->NULL
- 8: |21|--->|59|--->|75|--->|78|--->|84|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->|44|--->|54|--->|56|--->|65|--->|81|--->|89|--->NULL
-10: |22|--->|36|--->|51|--->|82|--->|83|--->|88|--->NULL
-11: |17|--->|45|--->|57|--->|76|--->|85|--->|87|--->NULL
-12: |1|--->|19|--->|55|--->NULL
-13: |8|--->|43|--->|49|--->|69|--->|77|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=0: NULL
+ 2: Count=1: |87|--->NULL
+ 3: Count=1: |84|--->NULL
+ 4: Count=2: |58|--->|70|--->NULL
+ 5: Count=5: |48|--->|57|--->|77|--->|81|--->|82|--->NULL
+ 6: Count=3: |17|--->|34|--->|50|--->NULL
+ 7: Count=9: |18|--->|19|--->|21|--->|25|--->|59|--->|71|--->|79|--->|80|--->|85|--->NULL
+ 8: Count=9: |2|--->|11|--->|22|--->|43|--->|46|--->|56|--->|68|--->|69|--->|74|--->NULL
+ 9: Count=4: |1|--->|7|--->|54|--->|88|--->NULL
+10: Count=4: |14|--->|15|--->|33|--->|76|--->NULL
+11: Count=5: |0|--->|73|--->|75|--->|83|--->|89|--->NULL
+12: Count=3: |37|--->|40|--->|72|--->NULL
+13: Count=5: |13|--->|24|--->|31|--->|36|--->|65|--->NULL
+14: Count=7: |16|--->|23|--->|30|--->|38|--->|44|--->|51|--->|86|--->NULL
+15: Count=0: NULL
 
-Dequeued contents: PID: 86, state: new, parent: 0, priority: 0, mem: 0x2B320, size: 8, channel_no: 0 
-Dequeued contents: PID: 71, state: new, parent: 0, priority: 3, mem: 0x2AB90, size: 8, channel_no: 0 
-Dequeued contents: PID: 72, state: new, parent: 0, priority: 3, mem: 0x2AC00, size: 8, channel_no: 0 
-Dequeued contents: PID: 74, state: new, parent: 0, priority: 3, mem: 0x2ACE0, size: 8, channel_no: 0 
+Dequeued contents: PID: 87, state: running, parent: 0, priority: 2, mem: 0x2B3E0, size: 8, channel_no: 0 
+Dequeued contents: PID: 84, state: running, parent: 0, priority: 3, mem: 0x2B230, size: 8, channel_no: 0 
+Dequeued contents: PID: 58, state: running, parent: 0, priority: 4, mem: 0x2A510, size: 8, channel_no: 0 
+Dequeued contents: PID: 70, state: running, parent: 0, priority: 4, mem: 0x2AB50, size: 8, channel_no: 0 
 
 After dequeue:
 
- 0: NULL
- 1: NULL
- 2: NULL
- 3: |80|--->NULL
- 4: |31|--->|39|--->|60|--->|67|--->NULL
- 5: |13|--->|47|--->|50|--->|58|--->NULL
- 6: |26|--->|40|--->|41|--->|46|--->NULL
- 7: |25|--->|42|--->|64|--->NULL
- 8: |21|--->|59|--->|75|--->|78|--->|84|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->|44|--->|54|--->|56|--->|65|--->|81|--->|89|--->NULL
-10: |22|--->|36|--->|51|--->|82|--->|83|--->|88|--->NULL
-11: |17|--->|45|--->|57|--->|76|--->|85|--->|87|--->NULL
-12: |1|--->|19|--->|55|--->NULL
-13: |8|--->|43|--->|49|--->|69|--->|77|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=0: NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=0: NULL
+ 5: Count=5: |48|--->|57|--->|77|--->|81|--->|82|--->NULL
+ 6: Count=3: |17|--->|34|--->|50|--->NULL
+ 7: Count=9: |18|--->|19|--->|21|--->|25|--->|59|--->|71|--->|79|--->|80|--->|85|--->NULL
+ 8: Count=9: |2|--->|11|--->|22|--->|43|--->|46|--->|56|--->|68|--->|69|--->|74|--->NULL
+ 9: Count=4: |1|--->|7|--->|54|--->|88|--->NULL
+10: Count=4: |14|--->|15|--->|33|--->|76|--->NULL
+11: Count=5: |0|--->|73|--->|75|--->|83|--->|89|--->NULL
+12: Count=3: |37|--->|40|--->|72|--->NULL
+13: Count=5: |13|--->|24|--->|31|--->|36|--->|65|--->NULL
+14: Count=7: |16|--->|23|--->|30|--->|38|--->|44|--->|51|--->|86|--->NULL
+15: Count=0: NULL
 
 Adding 10 more PCBs
 Before dequeue:
 
- 0: NULL
- 1: NULL
- 2: NULL
- 3: |80|--->NULL
- 4: |31|--->|39|--->|60|--->|67|--->NULL
- 5: |13|--->|47|--->|50|--->|58|--->|90|--->|95|--->|98|--->NULL
- 6: |26|--->|40|--->|41|--->|46|--->|92|--->|93|--->NULL
- 7: |25|--->|42|--->|64|--->NULL
- 8: |21|--->|59|--->|75|--->|78|--->|84|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->|44|--->|54|--->|56|--->|65|--->|81|--->|89|--->NULL
-10: |22|--->|36|--->|51|--->|82|--->|83|--->|88|--->|94|--->NULL
-11: |17|--->|45|--->|57|--->|76|--->|85|--->|87|--->NULL
-12: |1|--->|19|--->|55|--->|91|--->|96|--->NULL
-13: |8|--->|43|--->|49|--->|69|--->|77|--->|97|--->|99|--->NULL
-14: |27|--->NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=0: NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=0: NULL
+ 5: Count=5: |48|--->|57|--->|77|--->|81|--->|82|--->NULL
+ 6: Count=4: |17|--->|34|--->|50|--->|99|--->NULL
+ 7: Count=11: |18|--->|19|--->|21|--->|25|--->|59|--->|71|--->|79|--->|80|--->|85|--->|91|--->|92|--->NULL
+ 8: Count=10: |2|--->|11|--->|22|--->|43|--->|46|--->|56|--->|68|--->|69|--->|74|--->|95|--->NULL
+ 9: Count=5: |1|--->|7|--->|54|--->|88|--->|93|--->NULL
+10: Count=4: |14|--->|15|--->|33|--->|76|--->NULL
+11: Count=5: |0|--->|73|--->|75|--->|83|--->|89|--->NULL
+12: Count=3: |37|--->|40|--->|72|--->NULL
+13: Count=8: |13|--->|24|--->|31|--->|36|--->|65|--->|90|--->|97|--->|98|--->NULL
+14: Count=9: |16|--->|23|--->|30|--->|38|--->|44|--->|51|--->|86|--->|94|--->|96|--->NULL
+15: Count=0: NULL
 
-Dequeued contents: PID: 80, state: new, parent: 0, priority: 3, mem: 0x2B020, size: 8, channel_no: 0 
-Dequeued contents: PID: 31, state: new, parent: 0, priority: 4, mem: 0x29730, size: 8, channel_no: 0 
-Dequeued contents: PID: 39, state: new, parent: 0, priority: 4, mem: 0x29B30, size: 8, channel_no: 0 
-Dequeued contents: PID: 60, state: new, parent: 0, priority: 4, mem: 0x2A600, size: 8, channel_no: 0 
-Dequeued contents: PID: 67, state: new, parent: 0, priority: 4, mem: 0x2A970, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: |13|--->|47|--->|50|--->|58|--->|90|--->|95|--->|98|--->NULL
- 6: |26|--->|40|--->|41|--->|46|--->|92|--->|93|--->NULL
- 7: |25|--->|42|--->|64|--->NULL
- 8: |21|--->|59|--->|75|--->|78|--->|84|--->NULL
- 9: |7|--->|15|--->|18|--->|30|--->|44|--->|54|--->|56|--->|65|--->|81|--->|89|--->NULL
-10: |22|--->|36|--->|51|--->|82|--->|83|--->|88|--->|94|--->NULL
-11: |17|--->|45|--->|57|--->|76|--->|85|--->|87|--->NULL
-12: |1|--->|19|--->|55|--->|91|--->|96|--->NULL
-13: |8|--->|43|--->|49|--->|69|--->|77|--->|97|--->|99|--->NULL
-14: |27|--->NULL
-15: NULL
-
-PriorityQueue Deconstructed
-Adding 10 more PCBs
-Before dequeue:
-
- 0: |6|--->NULL
- 1: NULL
- 2: |3|--->NULL
- 3: |0|--->|7|--->NULL
- 4: |1|--->|5|--->NULL
- 5: |4|--->NULL
- 6: NULL
- 7: NULL
- 8: |2|--->NULL
- 9: |8|--->NULL
-10: NULL
-11: NULL
-12: |9|--->NULL
-13: NULL
-14: NULL
-15: NULL
-
-Dequeued contents: PID: 6, state: new, parent: 0, priority: 0, mem: 0x28A60, size: 8, channel_no: 0 
-Dequeued contents: PID: 3, state: new, parent: 0, priority: 2, mem: 0x288B0, size: 8, channel_no: 0 
-Dequeued contents: PID: 0, state: new, parent: 0, priority: 3, mem: 0x28700, size: 8, channel_no: 0 
-Dequeued contents: PID: 7, state: new, parent: 0, priority: 3, mem: 0x28AF0, size: 8, channel_no: 0 
+Dequeued contents: PID: 48, state: running, parent: 0, priority: 5, mem: 0x29FF0, size: 8, channel_no: 0 
+Dequeued contents: PID: 57, state: running, parent: 0, priority: 5, mem: 0x2A480, size: 8, channel_no: 0 
+Dequeued contents: PID: 77, state: running, parent: 0, priority: 5, mem: 0x2AEC0, size: 8, channel_no: 0 
+Dequeued contents: PID: 81, state: running, parent: 0, priority: 5, mem: 0x2B0E0, size: 8, channel_no: 0 
 
 After dequeue:
 
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: |1|--->|5|--->NULL
- 5: |4|--->NULL
- 6: NULL
- 7: NULL
- 8: |2|--->NULL
- 9: |8|--->NULL
-10: NULL
-11: NULL
-12: |9|--->NULL
-13: NULL
-14: NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: NULL
- 1: NULL
- 2: |10|--->|11|--->NULL
- 3: |18|--->NULL
- 4: |1|--->|5|--->NULL
- 5: |4|--->|15|--->NULL
- 6: |17|--->NULL
- 7: NULL
- 8: |2|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->NULL
-10: NULL
-11: NULL
-12: |9|--->NULL
-13: |14|--->|19|--->NULL
-14: NULL
-15: NULL
-
-Dequeued contents: PID: 10, state: new, parent: 0, priority: 2, mem: 0x28CA0, size: 8, channel_no: 0 
-Dequeued contents: PID: 11, state: new, parent: 0, priority: 2, mem: 0x28D10, size: 8, channel_no: 0 
-Dequeued contents: PID: 18, state: new, parent: 0, priority: 3, mem: 0x290A0, size: 8, channel_no: 0 
-Dequeued contents: PID: 1, state: new, parent: 0, priority: 4, mem: 0x28790, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: |5|--->NULL
- 5: |4|--->|15|--->NULL
- 6: |17|--->NULL
- 7: NULL
- 8: |2|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->NULL
-10: NULL
-11: NULL
-12: |9|--->NULL
-13: |14|--->|19|--->NULL
-14: NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: NULL
- 1: |28|--->NULL
- 2: |24|--->NULL
- 3: |23|--->NULL
- 4: |5|--->NULL
- 5: |4|--->|15|--->|20|--->NULL
- 6: |17|--->NULL
- 7: NULL
- 8: |2|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->NULL
-10: |21|--->|26|--->NULL
-11: |22|--->NULL
-12: |9|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->NULL
-14: |29|--->NULL
-15: NULL
-
-Dequeued contents: PID: 28, state: new, parent: 0, priority: 1, mem: 0x295C0, size: 8, channel_no: 0 
-Dequeued contents: PID: 24, state: new, parent: 0, priority: 2, mem: 0x29380, size: 8, channel_no: 0 
-Dequeued contents: PID: 23, state: new, parent: 0, priority: 3, mem: 0x29310, size: 8, channel_no: 0 
-Dequeued contents: PID: 5, state: new, parent: 0, priority: 4, mem: 0x289D0, size: 8, channel_no: 0 
-Dequeued contents: PID: 4, state: new, parent: 0, priority: 5, mem: 0x28940, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: |15|--->|20|--->NULL
- 6: |17|--->NULL
- 7: NULL
- 8: |2|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->NULL
-10: |21|--->|26|--->NULL
-11: |22|--->NULL
-12: |9|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->NULL
-14: |29|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: |34|--->|35|--->|39|--->NULL
- 5: |15|--->|20|--->NULL
- 6: |17|--->|33|--->|36|--->NULL
- 7: |38|--->NULL
- 8: |2|--->|37|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->NULL
-10: |21|--->|26|--->|30|--->NULL
-11: |22|--->|31|--->NULL
-12: |9|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->NULL
-14: |29|--->NULL
-15: NULL
-
-Dequeued contents: PID: 34, state: new, parent: 0, priority: 4, mem: 0x298A0, size: 8, channel_no: 0 
-Dequeued contents: PID: 35, state: new, parent: 0, priority: 4, mem: 0x29910, size: 8, channel_no: 0 
-Dequeued contents: PID: 39, state: new, parent: 0, priority: 4, mem: 0x29B50, size: 8, channel_no: 0 
-Dequeued contents: PID: 15, state: new, parent: 0, priority: 5, mem: 0x28EF0, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: |20|--->NULL
- 6: |17|--->|33|--->|36|--->NULL
- 7: |38|--->NULL
- 8: |2|--->|37|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->NULL
-10: |21|--->|26|--->|30|--->NULL
-11: |22|--->|31|--->NULL
-12: |9|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->NULL
-14: |29|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: |42|--->NULL
- 1: |44|--->|49|--->NULL
- 2: NULL
- 3: NULL
- 4: |46|--->NULL
- 5: |20|--->|43|--->NULL
- 6: |17|--->|33|--->|36|--->|48|--->NULL
- 7: |38|--->|41|--->NULL
- 8: |2|--->|37|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->NULL
-10: |21|--->|26|--->|30|--->|40|--->NULL
-11: |22|--->|31|--->NULL
-12: |9|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->|45|--->NULL
-14: |29|--->|47|--->NULL
-15: NULL
-
-Dequeued contents: PID: 42, state: new, parent: 0, priority: 0, mem: 0x29CA0, size: 8, channel_no: 0 
-Dequeued contents: PID: 44, state: new, parent: 0, priority: 1, mem: 0x29DA0, size: 8, channel_no: 0 
-Dequeued contents: PID: 49, state: new, parent: 0, priority: 1, mem: 0x2A070, size: 8, channel_no: 0 
-Dequeued contents: PID: 46, state: new, parent: 0, priority: 4, mem: 0x29EC0, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: |20|--->|43|--->NULL
- 6: |17|--->|33|--->|36|--->|48|--->NULL
- 7: |38|--->|41|--->NULL
- 8: |2|--->|37|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->NULL
-10: |21|--->|26|--->|30|--->|40|--->NULL
-11: |22|--->|31|--->NULL
-12: |9|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->|45|--->NULL
-14: |29|--->|47|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: NULL
- 1: |58|--->NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: |20|--->|43|--->|55|--->NULL
- 6: |17|--->|33|--->|36|--->|48|--->NULL
- 7: |38|--->|41|--->NULL
- 8: |2|--->|37|--->|52|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->|54|--->NULL
-10: |21|--->|26|--->|30|--->|40|--->|51|--->NULL
-11: |22|--->|31|--->|50|--->|57|--->|59|--->NULL
-12: |9|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->|45|--->|53|--->NULL
-14: |29|--->|47|--->|56|--->NULL
-15: NULL
-
-Dequeued contents: PID: 58, state: new, parent: 0, priority: 1, mem: 0x2A500, size: 8, channel_no: 0 
-Dequeued contents: PID: 20, state: new, parent: 0, priority: 5, mem: 0x291C0, size: 8, channel_no: 0 
-Dequeued contents: PID: 43, state: new, parent: 0, priority: 5, mem: 0x29D10, size: 8, channel_no: 0 
-Dequeued contents: PID: 55, state: new, parent: 0, priority: 5, mem: 0x2A350, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: NULL
- 6: |17|--->|33|--->|36|--->|48|--->NULL
- 7: |38|--->|41|--->NULL
- 8: |2|--->|37|--->|52|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->|54|--->NULL
-10: |21|--->|26|--->|30|--->|40|--->|51|--->NULL
-11: |22|--->|31|--->|50|--->|57|--->|59|--->NULL
-12: |9|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->|45|--->|53|--->NULL
-14: |29|--->|47|--->|56|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: NULL
- 1: |68|--->NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: |63|--->NULL
- 6: |17|--->|33|--->|36|--->|48|--->|64|--->|66|--->NULL
- 7: |38|--->|41|--->|60|--->NULL
- 8: |2|--->|37|--->|52|--->|65|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->|54|--->|67|--->NULL
-10: |21|--->|26|--->|30|--->|40|--->|51|--->NULL
-11: |22|--->|31|--->|50|--->|57|--->|59|--->NULL
-12: |9|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->|45|--->|53|--->|61|--->|62|--->NULL
-14: |29|--->|47|--->|56|--->|69|--->NULL
-15: NULL
-
-Dequeued contents: PID: 68, state: new, parent: 0, priority: 1, mem: 0x2AA20, size: 8, channel_no: 0 
-Dequeued contents: PID: 63, state: new, parent: 0, priority: 5, mem: 0x2A770, size: 8, channel_no: 0 
-Dequeued contents: PID: 17, state: new, parent: 0, priority: 6, mem: 0x29010, size: 8, channel_no: 0 
-Dequeued contents: PID: 33, state: new, parent: 0, priority: 6, mem: 0x29830, size: 8, channel_no: 0 
-Dequeued contents: PID: 36, state: new, parent: 0, priority: 6, mem: 0x299A0, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: NULL
- 6: |48|--->|64|--->|66|--->NULL
- 7: |38|--->|41|--->|60|--->NULL
- 8: |2|--->|37|--->|52|--->|65|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->|54|--->|67|--->NULL
-10: |21|--->|26|--->|30|--->|40|--->|51|--->NULL
-11: |22|--->|31|--->|50|--->|57|--->|59|--->NULL
-12: |9|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->|45|--->|53|--->|61|--->|62|--->NULL
-14: |29|--->|47|--->|56|--->|69|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: |71|--->NULL
- 1: |76|--->|78|--->NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: NULL
- 6: |48|--->|64|--->|66|--->|72|--->NULL
- 7: |38|--->|41|--->|60|--->NULL
- 8: |2|--->|37|--->|52|--->|65|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->|54|--->|67|--->|73|--->NULL
-10: |21|--->|26|--->|30|--->|40|--->|51|--->|70|--->NULL
-11: |22|--->|31|--->|50|--->|57|--->|59|--->|79|--->NULL
-12: |9|--->|75|--->|77|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->|45|--->|53|--->|61|--->|62|--->NULL
-14: |29|--->|47|--->|56|--->|69|--->|74|--->NULL
-15: NULL
-
-Dequeued contents: PID: 71, state: new, parent: 0, priority: 0, mem: 0x2ABB0, size: 8, channel_no: 0 
-Dequeued contents: PID: 76, state: new, parent: 0, priority: 1, mem: 0x2AE00, size: 8, channel_no: 0 
-Dequeued contents: PID: 78, state: new, parent: 0, priority: 1, mem: 0x2AF20, size: 8, channel_no: 0 
-Dequeued contents: PID: 48, state: new, parent: 0, priority: 6, mem: 0x29FE0, size: 8, channel_no: 0 
-Dequeued contents: PID: 64, state: new, parent: 0, priority: 6, mem: 0x2A7E0, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: NULL
- 6: |66|--->|72|--->NULL
- 7: |38|--->|41|--->|60|--->NULL
- 8: |2|--->|37|--->|52|--->|65|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->|54|--->|67|--->|73|--->NULL
-10: |21|--->|26|--->|30|--->|40|--->|51|--->|70|--->NULL
-11: |22|--->|31|--->|50|--->|57|--->|59|--->|79|--->NULL
-12: |9|--->|75|--->|77|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->|45|--->|53|--->|61|--->|62|--->NULL
-14: |29|--->|47|--->|56|--->|69|--->|74|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: |81|--->NULL
- 1: NULL
- 2: NULL
- 3: |80|--->|89|--->NULL
- 4: |84|--->NULL
- 5: |82|--->NULL
- 6: |66|--->|72|--->NULL
- 7: |38|--->|41|--->|60|--->|87|--->NULL
- 8: |2|--->|37|--->|52|--->|65|--->|85|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->|54|--->|67|--->|73|--->|86|--->NULL
-10: |21|--->|26|--->|30|--->|40|--->|51|--->|70|--->|83|--->NULL
-11: |22|--->|31|--->|50|--->|57|--->|59|--->|79|--->NULL
-12: |9|--->|75|--->|77|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->|45|--->|53|--->|61|--->|62|--->NULL
-14: |29|--->|47|--->|56|--->|69|--->|74|--->|88|--->NULL
-15: NULL
-
-Dequeued contents: PID: 81, state: new, parent: 0, priority: 0, mem: 0x2B0B0, size: 8, channel_no: 0 
-Dequeued contents: PID: 80, state: new, parent: 0, priority: 3, mem: 0x2B040, size: 8, channel_no: 0 
-Dequeued contents: PID: 89, state: new, parent: 0, priority: 3, mem: 0x2B4B0, size: 8, channel_no: 0 
-Dequeued contents: PID: 84, state: new, parent: 0, priority: 4, mem: 0x2B200, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: |82|--->NULL
- 6: |66|--->|72|--->NULL
- 7: |38|--->|41|--->|60|--->|87|--->NULL
- 8: |2|--->|37|--->|52|--->|65|--->|85|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->|54|--->|67|--->|73|--->|86|--->NULL
-10: |21|--->|26|--->|30|--->|40|--->|51|--->|70|--->|83|--->NULL
-11: |22|--->|31|--->|50|--->|57|--->|59|--->|79|--->NULL
-12: |9|--->|75|--->|77|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->|45|--->|53|--->|61|--->|62|--->NULL
-14: |29|--->|47|--->|56|--->|69|--->|74|--->|88|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: NULL
- 1: NULL
- 2: |97|--->NULL
- 3: NULL
- 4: |96|--->NULL
- 5: |82|--->|91|--->|95|--->|98|--->NULL
- 6: |66|--->|72|--->NULL
- 7: |38|--->|41|--->|60|--->|87|--->|90|--->|93|--->NULL
- 8: |2|--->|37|--->|52|--->|65|--->|85|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->|54|--->|67|--->|73|--->|86|--->|94|--->NULL
-10: |21|--->|26|--->|30|--->|40|--->|51|--->|70|--->|83|--->NULL
-11: |22|--->|31|--->|50|--->|57|--->|59|--->|79|--->NULL
-12: |9|--->|75|--->|77|--->|92|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->|45|--->|53|--->|61|--->|62|--->|99|--->NULL
-14: |29|--->|47|--->|56|--->|69|--->|74|--->|88|--->NULL
-15: NULL
-
-Dequeued contents: PID: 97, state: new, parent: 0, priority: 2, mem: 0x2B8B0, size: 8, channel_no: 0 
-Dequeued contents: PID: 96, state: new, parent: 0, priority: 4, mem: 0x2B820, size: 8, channel_no: 0 
-Dequeued contents: PID: 82, state: new, parent: 0, priority: 5, mem: 0x2B120, size: 8, channel_no: 0 
-Dequeued contents: PID: 91, state: new, parent: 0, priority: 5, mem: 0x2B590, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: |95|--->|98|--->NULL
- 6: |66|--->|72|--->NULL
- 7: |38|--->|41|--->|60|--->|87|--->|90|--->|93|--->NULL
- 8: |2|--->|37|--->|52|--->|65|--->|85|--->NULL
- 9: |8|--->|12|--->|13|--->|16|--->|54|--->|67|--->|73|--->|86|--->|94|--->NULL
-10: |21|--->|26|--->|30|--->|40|--->|51|--->|70|--->|83|--->NULL
-11: |22|--->|31|--->|50|--->|57|--->|59|--->|79|--->NULL
-12: |9|--->|75|--->|77|--->|92|--->NULL
-13: |14|--->|19|--->|25|--->|27|--->|32|--->|45|--->|53|--->|61|--->|62|--->|99|--->NULL
-14: |29|--->|47|--->|56|--->|69|--->|74|--->|88|--->NULL
-15: NULL
-
-PriorityQueue Deconstructed
-Adding 10 more PCBs
-Before dequeue:
-
- 0: NULL
- 1: NULL
- 2: |0|--->NULL
- 3: NULL
- 4: |3|--->NULL
- 5: |2|--->|7|--->NULL
- 6: |4|--->NULL
- 7: |5|--->|6|--->NULL
- 8: |1|--->NULL
- 9: NULL
-10: |8|--->NULL
-11: NULL
-12: NULL
-13: |9|--->NULL
-14: NULL
-15: NULL
-
-Dequeued contents: PID: 0, state: new, parent: 0, priority: 2, mem: 0x28700, size: 8, channel_no: 0 
-Dequeued contents: PID: 3, state: new, parent: 0, priority: 4, mem: 0x288B0, size: 8, channel_no: 0 
-Dequeued contents: PID: 2, state: new, parent: 0, priority: 5, mem: 0x28820, size: 8, channel_no: 0 
-Dequeued contents: PID: 7, state: new, parent: 0, priority: 5, mem: 0x28AF0, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: NULL
- 6: |4|--->NULL
- 7: |5|--->|6|--->NULL
- 8: |1|--->NULL
- 9: NULL
-10: |8|--->NULL
-11: NULL
-12: NULL
-13: |9|--->NULL
-14: NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: |14|--->NULL
- 4: |19|--->NULL
- 5: NULL
- 6: |4|--->NULL
- 7: |5|--->|6|--->|12|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->NULL
- 9: |11|--->|16|--->NULL
-10: |8|--->NULL
-11: NULL
-12: |18|--->NULL
-13: |9|--->NULL
-14: |15|--->NULL
-15: NULL
-
-Dequeued contents: PID: 14, state: new, parent: 0, priority: 3, mem: 0x28E60, size: 8, channel_no: 0 
-Dequeued contents: PID: 19, state: new, parent: 0, priority: 4, mem: 0x29130, size: 8, channel_no: 0 
-Dequeued contents: PID: 4, state: new, parent: 0, priority: 6, mem: 0x28940, size: 8, channel_no: 0 
-Dequeued contents: PID: 5, state: new, parent: 0, priority: 7, mem: 0x289D0, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: NULL
- 6: NULL
- 7: |6|--->|12|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->NULL
- 9: |11|--->|16|--->NULL
-10: |8|--->NULL
-11: NULL
-12: |18|--->NULL
-13: |9|--->NULL
-14: |15|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: |28|--->NULL
- 1: NULL
- 2: |21|--->|25|--->NULL
- 3: |26|--->NULL
- 4: NULL
- 5: |27|--->NULL
- 6: NULL
- 7: |6|--->|12|--->|29|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->NULL
- 9: |11|--->|16|--->NULL
-10: |8|--->NULL
-11: |23|--->NULL
-12: |18|--->|20|--->NULL
-13: |9|--->|24|--->NULL
-14: |15|--->|22|--->NULL
-15: NULL
-
-Dequeued contents: PID: 28, state: new, parent: 0, priority: 0, mem: 0x295C0, size: 8, channel_no: 0 
-Dequeued contents: PID: 21, state: new, parent: 0, priority: 2, mem: 0x29210, size: 8, channel_no: 0 
-Dequeued contents: PID: 25, state: new, parent: 0, priority: 2, mem: 0x29410, size: 8, channel_no: 0 
-Dequeued contents: PID: 26, state: new, parent: 0, priority: 3, mem: 0x294A0, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: |27|--->NULL
- 6: NULL
- 7: |6|--->|12|--->|29|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->NULL
- 9: |11|--->|16|--->NULL
-10: |8|--->NULL
-11: |23|--->NULL
-12: |18|--->|20|--->NULL
-13: |9|--->|24|--->NULL
-14: |15|--->|22|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: |32|--->NULL
- 1: |30|--->NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: |27|--->NULL
- 6: |34|--->NULL
- 7: |6|--->|12|--->|29|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->NULL
- 9: |11|--->|16|--->NULL
-10: |8|--->|36|--->NULL
-11: |23|--->NULL
-12: |18|--->|20|--->|35|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->NULL
-14: |15|--->|22|--->|31|--->NULL
-15: NULL
-
-Dequeued contents: PID: 32, state: new, parent: 0, priority: 0, mem: 0x297C0, size: 8, channel_no: 0 
-Dequeued contents: PID: 30, state: new, parent: 0, priority: 1, mem: 0x296E0, size: 8, channel_no: 0 
-Dequeued contents: PID: 27, state: new, parent: 0, priority: 5, mem: 0x29530, size: 8, channel_no: 0 
-Dequeued contents: PID: 34, state: new, parent: 0, priority: 6, mem: 0x298A0, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: NULL
- 6: NULL
- 7: |6|--->|12|--->|29|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->NULL
- 9: |11|--->|16|--->NULL
-10: |8|--->|36|--->NULL
-11: |23|--->NULL
-12: |18|--->|20|--->|35|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->NULL
-14: |15|--->|22|--->|31|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: |47|--->NULL
- 1: |41|--->NULL
- 2: |48|--->NULL
- 3: |43|--->NULL
- 4: |44|--->NULL
- 5: |46|--->NULL
- 6: NULL
- 7: |6|--->|12|--->|29|--->|40|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->|49|--->NULL
- 9: |11|--->|16|--->NULL
-10: |8|--->|36|--->|42|--->NULL
-11: |23|--->NULL
-12: |18|--->|20|--->|35|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->NULL
-14: |15|--->|22|--->|31|--->|45|--->NULL
-15: NULL
-
-Dequeued contents: PID: 47, state: new, parent: 0, priority: 0, mem: 0x29F70, size: 8, channel_no: 0 
-Dequeued contents: PID: 41, state: new, parent: 0, priority: 1, mem: 0x29C70, size: 8, channel_no: 0 
-Dequeued contents: PID: 48, state: new, parent: 0, priority: 2, mem: 0x2A000, size: 8, channel_no: 0 
-Dequeued contents: PID: 43, state: new, parent: 0, priority: 3, mem: 0x29D50, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: |44|--->NULL
- 5: |46|--->NULL
- 6: NULL
- 7: |6|--->|12|--->|29|--->|40|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->|49|--->NULL
- 9: |11|--->|16|--->NULL
-10: |8|--->|36|--->|42|--->NULL
-11: |23|--->NULL
-12: |18|--->|20|--->|35|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->NULL
-14: |15|--->|22|--->|31|--->|45|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: NULL
- 1: |51|--->NULL
- 2: NULL
- 3: |53|--->NULL
- 4: |44|--->|58|--->NULL
- 5: |46|--->NULL
- 6: |55|--->NULL
- 7: |6|--->|12|--->|29|--->|40|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->|49|--->|59|--->NULL
- 9: |11|--->|16|--->NULL
-10: |8|--->|36|--->|42|--->|50|--->NULL
-11: |23|--->NULL
-12: |18|--->|20|--->|35|--->|54|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->|52|--->|56|--->NULL
-14: |15|--->|22|--->|31|--->|45|--->|57|--->NULL
-15: NULL
-
-Dequeued contents: PID: 51, state: new, parent: 0, priority: 1, mem: 0x2A190, size: 8, channel_no: 0 
-Dequeued contents: PID: 53, state: new, parent: 0, priority: 3, mem: 0x2A270, size: 8, channel_no: 0 
-Dequeued contents: PID: 44, state: new, parent: 0, priority: 4, mem: 0x29DC0, size: 8, channel_no: 0 
-Dequeued contents: PID: 58, state: new, parent: 0, priority: 4, mem: 0x2A520, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: |46|--->NULL
- 6: |55|--->NULL
- 7: |6|--->|12|--->|29|--->|40|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->|49|--->|59|--->NULL
- 9: |11|--->|16|--->NULL
-10: |8|--->|36|--->|42|--->|50|--->NULL
-11: |23|--->NULL
-12: |18|--->|20|--->|35|--->|54|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->|52|--->|56|--->NULL
-14: |15|--->|22|--->|31|--->|45|--->|57|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: NULL
- 1: |65|--->NULL
- 2: NULL
- 3: |69|--->NULL
- 4: NULL
- 5: |46|--->|63|--->NULL
- 6: |55|--->NULL
- 7: |6|--->|12|--->|29|--->|40|--->|60|--->|61|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->|49|--->|59|--->|66|--->NULL
- 9: |11|--->|16|--->|67|--->NULL
-10: |8|--->|36|--->|42|--->|50|--->NULL
-11: |23|--->|62|--->NULL
-12: |18|--->|20|--->|35|--->|54|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->|52|--->|56|--->|64|--->|68|--->NULL
-14: |15|--->|22|--->|31|--->|45|--->|57|--->NULL
-15: NULL
-
-Dequeued contents: PID: 65, state: new, parent: 0, priority: 1, mem: 0x2A890, size: 8, channel_no: 0 
-Dequeued contents: PID: 69, state: new, parent: 0, priority: 3, mem: 0x2AAD0, size: 8, channel_no: 0 
-Dequeued contents: PID: 46, state: new, parent: 0, priority: 5, mem: 0x29EE0, size: 8, channel_no: 0 
-Dequeued contents: PID: 63, state: new, parent: 0, priority: 5, mem: 0x2A790, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: NULL
- 6: |55|--->NULL
- 7: |6|--->|12|--->|29|--->|40|--->|60|--->|61|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->|49|--->|59|--->|66|--->NULL
- 9: |11|--->|16|--->|67|--->NULL
-10: |8|--->|36|--->|42|--->|50|--->NULL
-11: |23|--->|62|--->NULL
-12: |18|--->|20|--->|35|--->|54|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->|52|--->|56|--->|64|--->|68|--->NULL
-14: |15|--->|22|--->|31|--->|45|--->|57|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: |72|--->NULL
- 1: |70|--->NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: NULL
- 6: |55|--->NULL
- 7: |6|--->|12|--->|29|--->|40|--->|60|--->|61|--->|71|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->|49|--->|59|--->|66|--->|73|--->|77|--->NULL
- 9: |11|--->|16|--->|67|--->NULL
-10: |8|--->|36|--->|42|--->|50|--->|75|--->|76|--->NULL
-11: |23|--->|62|--->|78|--->|79|--->NULL
-12: |18|--->|20|--->|35|--->|54|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->|52|--->|56|--->|64|--->|68|--->NULL
-14: |15|--->|22|--->|31|--->|45|--->|57|--->|74|--->NULL
-15: NULL
-
-Dequeued contents: PID: 72, state: new, parent: 0, priority: 0, mem: 0x2AC20, size: 8, channel_no: 0 
-Dequeued contents: PID: 70, state: new, parent: 0, priority: 1, mem: 0x2AB40, size: 8, channel_no: 0 
-Dequeued contents: PID: 55, state: new, parent: 0, priority: 6, mem: 0x2A370, size: 8, channel_no: 0 
-Dequeued contents: PID: 6, state: new, parent: 0, priority: 7, mem: 0x28A60, size: 8, channel_no: 0 
-Dequeued contents: PID: 12, state: new, parent: 0, priority: 7, mem: 0x28D80, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: NULL
- 6: NULL
- 7: |29|--->|40|--->|60|--->|61|--->|71|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->|49|--->|59|--->|66|--->|73|--->|77|--->NULL
- 9: |11|--->|16|--->|67|--->NULL
-10: |8|--->|36|--->|42|--->|50|--->|75|--->|76|--->NULL
-11: |23|--->|62|--->|78|--->|79|--->NULL
-12: |18|--->|20|--->|35|--->|54|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->|52|--->|56|--->|64|--->|68|--->NULL
-14: |15|--->|22|--->|31|--->|45|--->|57|--->|74|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: |84|--->NULL
- 1: NULL
- 2: |88|--->NULL
- 3: NULL
- 4: |83|--->NULL
- 5: NULL
- 6: |86|--->NULL
- 7: |29|--->|40|--->|60|--->|61|--->|71|--->|81|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->|49|--->|59|--->|66|--->|73|--->|77|--->NULL
- 9: |11|--->|16|--->|67|--->|82|--->NULL
-10: |8|--->|36|--->|42|--->|50|--->|75|--->|76|--->NULL
-11: |23|--->|62|--->|78|--->|79|--->|89|--->NULL
-12: |18|--->|20|--->|35|--->|54|--->|85|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->|52|--->|56|--->|64|--->|68|--->|80|--->|87|--->NULL
-14: |15|--->|22|--->|31|--->|45|--->|57|--->|74|--->NULL
-15: NULL
-
-Dequeued contents: PID: 84, state: new, parent: 0, priority: 0, mem: 0x2B240, size: 8, channel_no: 0 
-Dequeued contents: PID: 88, state: new, parent: 0, priority: 2, mem: 0x2B460, size: 8, channel_no: 0 
-Dequeued contents: PID: 83, state: new, parent: 0, priority: 4, mem: 0x2B1D0, size: 8, channel_no: 0 
-Dequeued contents: PID: 86, state: new, parent: 0, priority: 6, mem: 0x2B340, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: NULL
- 6: NULL
- 7: |29|--->|40|--->|60|--->|61|--->|71|--->|81|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->|49|--->|59|--->|66|--->|73|--->|77|--->NULL
- 9: |11|--->|16|--->|67|--->|82|--->NULL
-10: |8|--->|36|--->|42|--->|50|--->|75|--->|76|--->NULL
-11: |23|--->|62|--->|78|--->|79|--->|89|--->NULL
-12: |18|--->|20|--->|35|--->|54|--->|85|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->|52|--->|56|--->|64|--->|68|--->|80|--->|87|--->NULL
-14: |15|--->|22|--->|31|--->|45|--->|57|--->|74|--->NULL
-15: NULL
-
-Adding 10 more PCBs
-Before dequeue:
-
- 0: |98|--->NULL
- 1: NULL
- 2: |96|--->NULL
- 3: NULL
- 4: NULL
- 5: |90|--->|99|--->NULL
- 6: |95|--->NULL
- 7: |29|--->|40|--->|60|--->|61|--->|71|--->|81|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->|49|--->|59|--->|66|--->|73|--->|77|--->|94|--->NULL
- 9: |11|--->|16|--->|67|--->|82|--->NULL
-10: |8|--->|36|--->|42|--->|50|--->|75|--->|76|--->|93|--->NULL
-11: |23|--->|62|--->|78|--->|79|--->|89|--->|92|--->NULL
-12: |18|--->|20|--->|35|--->|54|--->|85|--->|97|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->|52|--->|56|--->|64|--->|68|--->|80|--->|87|--->|91|--->NULL
-14: |15|--->|22|--->|31|--->|45|--->|57|--->|74|--->NULL
-15: NULL
-
-Dequeued contents: PID: 98, state: new, parent: 0, priority: 0, mem: 0x2B980, size: 8, channel_no: 0 
-Dequeued contents: PID: 96, state: new, parent: 0, priority: 2, mem: 0x2B860, size: 8, channel_no: 0 
-Dequeued contents: PID: 90, state: new, parent: 0, priority: 5, mem: 0x2B580, size: 8, channel_no: 0 
-Dequeued contents: PID: 99, state: new, parent: 0, priority: 5, mem: 0x2BA10, size: 8, channel_no: 0 
-Dequeued contents: PID: 95, state: new, parent: 0, priority: 6, mem: 0x2B7D0, size: 8, channel_no: 0 
-
-After dequeue:
-
- 0: NULL
- 1: NULL
- 2: NULL
- 3: NULL
- 4: NULL
- 5: NULL
- 6: NULL
- 7: |29|--->|40|--->|60|--->|61|--->|71|--->|81|--->NULL
- 8: |1|--->|10|--->|13|--->|17|--->|38|--->|49|--->|59|--->|66|--->|73|--->|77|--->|94|--->NULL
- 9: |11|--->|16|--->|67|--->|82|--->NULL
-10: |8|--->|36|--->|42|--->|50|--->|75|--->|76|--->|93|--->NULL
-11: |23|--->|62|--->|78|--->|79|--->|89|--->|92|--->NULL
-12: |18|--->|20|--->|35|--->|54|--->|85|--->|97|--->NULL
-13: |9|--->|24|--->|33|--->|37|--->|39|--->|52|--->|56|--->|64|--->|68|--->|80|--->|87|--->|91|--->NULL
-14: |15|--->|22|--->|31|--->|45|--->|57|--->|74|--->NULL
-15: NULL
+ 0: Count=0: NULL
+ 1: Count=0: NULL
+ 2: Count=0: NULL
+ 3: Count=0: NULL
+ 4: Count=0: NULL
+ 5: Count=1: |82|--->NULL
+ 6: Count=4: |17|--->|34|--->|50|--->|99|--->NULL
+ 7: Count=11: |18|--->|19|--->|21|--->|25|--->|59|--->|71|--->|79|--->|80|--->|85|--->|91|--->|92|--->NULL
+ 8: Count=10: |2|--->|11|--->|22|--->|43|--->|46|--->|56|--->|68|--->|69|--->|74|--->|95|--->NULL
+ 9: Count=5: |1|--->|7|--->|54|--->|88|--->|93|--->NULL
+10: Count=4: |14|--->|15|--->|33|--->|76|--->NULL
+11: Count=5: |0|--->|73|--->|75|--->|83|--->|89|--->NULL
+12: Count=3: |37|--->|40|--->|72|--->NULL
+13: Count=8: |13|--->|24|--->|31|--->|36|--->|65|--->|90|--->|97|--->|98|--->NULL
+14: Count=9: |16|--->|23|--->|30|--->|38|--->|44|--->|51|--->|86|--->|94|--->|96|--->NULL
+15: Count=0: NULL
 
 PriorityQueue Deconstructed
