@@ -86,6 +86,7 @@ void readyQueueDeconstructor(ReadyQueue theQueue) {
 void readyQueueInitializer(ReadyQueue theQueue) {
     theQueue->top = 0;
     theQueue->bottom = 0;
+    theQueue->size = 0;
 }
 
 
@@ -101,6 +102,7 @@ int q_enqueue(ReadyQueue theQueue, ReadyQueueNode theNode) {
     if(q_isEmpty(theQueue)) {
         theQueue->top = theNode;
         theQueue->bottom = theNode;
+        theQueue->top->myPCB->state = ready;
         success = 1;
         //set node to top
     } else {
@@ -117,6 +119,9 @@ int q_enqueue(ReadyQueue theQueue, ReadyQueueNode theNode) {
         }
             success = 1;
     }
+    if(success == 1) {
+        theQueue->size = theQueue->size + 1;
+    }
     return success;
 }
 
@@ -129,10 +134,12 @@ ReadyQueueNode q_dequeue(ReadyQueue theQueue) {
     ReadyQueueNode theTopNode;
     if(q_isEmpty(theQueue)) {
         theTopNode = 0;
+        theQueue->size = 0;
     } else {
         ReadyQueueNode temp;
         theTopNode = theQueue->top;
         theQueue->top = theQueue->top->next;
+        theQueue->size = theQueue->size - 1;
     }
     return theTopNode;
 }
