@@ -5,12 +5,7 @@
 #define MAX_NODES 30
 #define MIN_NODES 10
 
-void main() {
-    FILE *stream;
-    if ((stream = freopen("FIFO_Queue_test.txt","w",stdout)) == NULL) {
-        exit(-1);
-
-        
+void main() {      
         srand(time(NULL));
         int number = rand() % (MAX_NODES + 1 - MIN_NODES) + MIN_NODES;
         ReadyQueue testQueue = readyQueueConstructor();     //make initial queue
@@ -42,7 +37,6 @@ void main() {
             q_dequeue(testQueue);                           //dequeue Node in Queue
             printf("\r\n");
         }
-        fclose(stream);
-    }
+
  
 }
