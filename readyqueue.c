@@ -117,7 +117,7 @@ int q_enqueue(ReadyQueue theQueue, ReadyQueueNode theNode) {
             theQueue->bottom->next = theNode;
 			theQueue->bottom = theQueue->bottom->next;
             theQueue->bottom->next = NULL;
-            theQueue->top->bottom->state = ready;
+            theQueue->bottom->myPCB->state = ready;
         }
             success = 1;
     }
@@ -142,7 +142,7 @@ ReadyQueueNode q_dequeue(ReadyQueue theQueue) {
         theTopNode = theQueue->top;
         theQueue->top = theQueue->top->next;
         theQueue->size = theQueue->size - 1;
-        theTopNode->myPCB->state->running;
+        theTopNode->myPCB->state = running;
     }
     return theTopNode;
 }
