@@ -1,0 +1,18 @@
+Beginning Tests:
+PCB Test:
+Creating PCB:
+
+
+Initial state:
+contents: PID: 0x0, Priority: 0x0, state: 0, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+
+Assigning state:
+
+
+Assigning complete, printing again:
+contents: PID: 0x0, Priority: 0x2, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+
+
+Destroying PCB.
+Done.
+END_OF_PCB_TESTS

@@ -1,0 +1,59 @@
+FIFO Test:
+Creating and enqueueing:
+
+Q:Count=1: P1-* : contents: PID: 0x1, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=2: P1->P2-* : contents: PID: 0x2, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=3: P1->P2->P3-* : contents: PID: 0x3, Priority: 0xB, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=4: P1->P2->P3->P4-* : contents: PID: 0x4, Priority: 0x6, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=5: P1->P2->P3->P4->P5-* : contents: PID: 0x5, Priority: 0x6, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=6: P1->P2->P3->P4->P5->P6-* : contents: PID: 0x6, Priority: 0xE, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=7: P1->P2->P3->P4->P5->P6->P7-* : contents: PID: 0x7, Priority: 0xE, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=8: P1->P2->P3->P4->P5->P6->P7->P8-* : contents: PID: 0x8, Priority: 0x2, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=9: P1->P2->P3->P4->P5->P6->P7->P8->P9-* : contents: PID: 0x9, Priority: 0x3, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=10: P1->P2->P3->P4->P5->P6->P7->P8->P9->P10-* : contents: PID: 0xA, Priority: 0xC, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=11: P1->P2->P3->P4->P5->P6->P7->P8->P9->P10->P11-* : contents: PID: 0xB, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+
+
+
+Dequeueing:
+
+Q:Count=11: P1->P2->P3->P4->P5->P6->P7->P8->P9->P10->P11-*
+Q:Count=10: P2->P3->P4->P5->P6->P7->P8->P9->P10->P11-*
+contents: PID: 0x1, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=10: P2->P3->P4->P5->P6->P7->P8->P9->P10->P11-*
+Q:Count=9: P3->P4->P5->P6->P7->P8->P9->P10->P11-*
+contents: PID: 0x2, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=9: P3->P4->P5->P6->P7->P8->P9->P10->P11-*
+Q:Count=8: P4->P5->P6->P7->P8->P9->P10->P11-*
+contents: PID: 0x3, Priority: 0xB, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=8: P4->P5->P6->P7->P8->P9->P10->P11-*
+Q:Count=7: P5->P6->P7->P8->P9->P10->P11-*
+contents: PID: 0x4, Priority: 0x6, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=7: P5->P6->P7->P8->P9->P10->P11-*
+Q:Count=6: P6->P7->P8->P9->P10->P11-*
+contents: PID: 0x5, Priority: 0x6, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=6: P6->P7->P8->P9->P10->P11-*
+Q:Count=5: P7->P8->P9->P10->P11-*
+contents: PID: 0x6, Priority: 0xE, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=5: P7->P8->P9->P10->P11-*
+Q:Count=4: P8->P9->P10->P11-*
+contents: PID: 0x7, Priority: 0xE, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=4: P8->P9->P10->P11-*
+Q:Count=3: P9->P10->P11-*
+contents: PID: 0x8, Priority: 0x2, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=3: P9->P10->P11-*
+Q:Count=2: P10->P11-*
+contents: PID: 0x9, Priority: 0x3, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=2: P10->P11-*
+Q:Count=1: P11-*
+contents: PID: 0xA, Priority: 0xC, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Q:Count=1: P11-*
+Q:Count=0: 
+contents: PID: 0xB, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+
+
+
+Destroying the queue.
+
+Complete.
+END_OF_FIFO_TESTS

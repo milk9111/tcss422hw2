@@ -1,0 +1,283 @@
+PQ Test:
+Creating priority queue.
+Beginning to add PCBs:
+
+Step 1:
+Q0:Q:Count=0: 
+Q1:Q:Count=0: 
+Q2:Q:Count=2: P12->P20-*
+Q3:Q:Count=1: P21-*
+Q4:Q:Count=0: 
+Q5:Q:Count=2: P13->P14-*
+Q6:Q:Count=2: P16->P17-*
+Q7:Q:Count=0: 
+Q8:Q:Count=0: 
+Q9:Q:Count=0: 
+Q10:Q:Count=0: 
+Q11:Q:Count=1: P15-*
+Q12:Q:Count=0: 
+Q13:Q:Count=0: 
+Q14:Q:Count=2: P18->P19-*
+Q15:Q:Count=0: 
+
+Dequeuing 4 PCBs:
+contents: PID: 0xC, Priority: 0x2, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x14, Priority: 0x2, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x15, Priority: 0x3, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0xD, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Dequeues complete.
+
+Step 2:
+Q0:Q:Count=0: 
+Q1:Q:Count=1: P31-*
+Q2:Q:Count=1: P28-*
+Q3:Q:Count=0: 
+Q4:Q:Count=0: 
+Q5:Q:Count=2: P14->P22-*
+Q6:Q:Count=3: P16->P17->P23-*
+Q7:Q:Count=1: P25-*
+Q8:Q:Count=0: 
+Q9:Q:Count=1: P26-*
+Q10:Q:Count=2: P24->P30-*
+Q11:Q:Count=1: P15-*
+Q12:Q:Count=0: 
+Q13:Q:Count=0: 
+Q14:Q:Count=3: P18->P19->P29-*
+Q15:Q:Count=1: P27-*
+
+Dequeuing 5 PCBs:
+contents: PID: 0x1F, Priority: 0x1, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x1C, Priority: 0x2, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0xE, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x16, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x10, Priority: 0x6, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Dequeues complete.
+
+Step 3:
+Q0:Q:Count=0: 
+Q1:Q:Count=0: 
+Q2:Q:Count=2: P34->P39-*
+Q3:Q:Count=0: 
+Q4:Q:Count=0: 
+Q5:Q:Count=1: P40-*
+Q6:Q:Count=3: P17->P23->P37-*
+Q7:Q:Count=2: P25->P33-*
+Q8:Q:Count=1: P38-*
+Q9:Q:Count=3: P26->P35->P41-*
+Q10:Q:Count=4: P24->P30->P32->P36-*
+Q11:Q:Count=1: P15-*
+Q12:Q:Count=0: 
+Q13:Q:Count=0: 
+Q14:Q:Count=3: P18->P19->P29-*
+Q15:Q:Count=1: P27-*
+
+Dequeuing 5 PCBs:
+contents: PID: 0x22, Priority: 0x2, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x27, Priority: 0x2, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x28, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x11, Priority: 0x6, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x17, Priority: 0x6, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Dequeues complete.
+
+Step 4:
+Q0:Q:Count=0: 
+Q1:Q:Count=0: 
+Q2:Q:Count=0: 
+Q3:Q:Count=1: P51-*
+Q4:Q:Count=0: 
+Q5:Q:Count=0: 
+Q6:Q:Count=2: P37->P42-*
+Q7:Q:Count=3: P25->P33->P43-*
+Q8:Q:Count=1: P38-*
+Q9:Q:Count=4: P26->P35->P41->P47-*
+Q10:Q:Count=5: P24->P30->P32->P36->P50-*
+Q11:Q:Count=3: P15->P44->P46-*
+Q12:Q:Count=0: 
+Q13:Q:Count=2: P48->P49-*
+Q14:Q:Count=4: P18->P19->P29->P45-*
+Q15:Q:Count=1: P27-*
+
+Dequeuing 5 PCBs:
+contents: PID: 0x33, Priority: 0x3, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x25, Priority: 0x6, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x2A, Priority: 0x6, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x19, Priority: 0x7, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x21, Priority: 0x7, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Dequeues complete.
+
+Step 5:
+Q0:Q:Count=0: 
+Q1:Q:Count=1: P58-*
+Q2:Q:Count=0: 
+Q3:Q:Count=1: P55-*
+Q4:Q:Count=0: 
+Q5:Q:Count=0: 
+Q6:Q:Count=1: P53-*
+Q7:Q:Count=3: P43->P54->P57-*
+Q8:Q:Count=2: P38->P56-*
+Q9:Q:Count=5: P26->P35->P41->P47->P60-*
+Q10:Q:Count=5: P24->P30->P32->P36->P50-*
+Q11:Q:Count=5: P15->P44->P46->P59->P61-*
+Q12:Q:Count=0: 
+Q13:Q:Count=3: P48->P49->P52-*
+Q14:Q:Count=4: P18->P19->P29->P45-*
+Q15:Q:Count=1: P27-*
+
+Dequeuing 4 PCBs:
+contents: PID: 0x3A, Priority: 0x1, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x37, Priority: 0x3, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x35, Priority: 0x6, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x2B, Priority: 0x7, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Dequeues complete.
+
+Step 6:
+Q0:Q:Count=0: 
+Q1:Q:Count=0: 
+Q2:Q:Count=1: P62-*
+Q3:Q:Count=0: 
+Q4:Q:Count=1: P68-*
+Q5:Q:Count=2: P66->P71-*
+Q6:Q:Count=1: P70-*
+Q7:Q:Count=3: P54->P57->P69-*
+Q8:Q:Count=3: P38->P56->P67-*
+Q9:Q:Count=5: P26->P35->P41->P47->P60-*
+Q10:Q:Count=5: P24->P30->P32->P36->P50-*
+Q11:Q:Count=5: P15->P44->P46->P59->P61-*
+Q12:Q:Count=1: P64-*
+Q13:Q:Count=5: P48->P49->P52->P63->P65-*
+Q14:Q:Count=4: P18->P19->P29->P45-*
+Q15:Q:Count=1: P27-*
+
+Dequeuing 5 PCBs:
+contents: PID: 0x3E, Priority: 0x2, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x44, Priority: 0x4, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x42, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x47, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x46, Priority: 0x6, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Dequeues complete.
+
+Step 7:
+Q0:Q:Count=0: 
+Q1:Q:Count=2: P73->P76-*
+Q2:Q:Count=1: P77-*
+Q3:Q:Count=0: 
+Q4:Q:Count=1: P74-*
+Q5:Q:Count=0: 
+Q6:Q:Count=0: 
+Q7:Q:Count=3: P54->P57->P69-*
+Q8:Q:Count=4: P38->P56->P67->P79-*
+Q9:Q:Count=6: P26->P35->P41->P47->P60->P78-*
+Q10:Q:Count=5: P24->P30->P32->P36->P50-*
+Q11:Q:Count=7: P15->P44->P46->P59->P61->P72->P80-*
+Q12:Q:Count=1: P64-*
+Q13:Q:Count=6: P48->P49->P52->P63->P65->P75-*
+Q14:Q:Count=4: P18->P19->P29->P45-*
+Q15:Q:Count=2: P27->P81-*
+
+Dequeuing 5 PCBs:
+contents: PID: 0x49, Priority: 0x1, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x4C, Priority: 0x1, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x4D, Priority: 0x2, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x4A, Priority: 0x4, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x36, Priority: 0x7, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Dequeues complete.
+
+Step 8:
+Q0:Q:Count=3: P82->P83->P91-*
+Q1:Q:Count=1: P88-*
+Q2:Q:Count=1: P89-*
+Q3:Q:Count=0: 
+Q4:Q:Count=0: 
+Q5:Q:Count=1: P84-*
+Q6:Q:Count=0: 
+Q7:Q:Count=2: P57->P69-*
+Q8:Q:Count=5: P38->P56->P67->P79->P90-*
+Q9:Q:Count=8: P26->P35->P41->P47->P60->P78->P86->P87-*
+Q10:Q:Count=5: P24->P30->P32->P36->P50-*
+Q11:Q:Count=8: P15->P44->P46->P59->P61->P72->P80->P85-*
+Q12:Q:Count=1: P64-*
+Q13:Q:Count=6: P48->P49->P52->P63->P65->P75-*
+Q14:Q:Count=4: P18->P19->P29->P45-*
+Q15:Q:Count=2: P27->P81-*
+
+Dequeuing 5 PCBs:
+contents: PID: 0x52, Priority: 0x0, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x53, Priority: 0x0, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x5B, Priority: 0x0, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x58, Priority: 0x1, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x59, Priority: 0x2, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Dequeues complete.
+
+Step 9:
+Q0:Q:Count=0: 
+Q1:Q:Count=0: 
+Q2:Q:Count=1: P93-*
+Q3:Q:Count=0: 
+Q4:Q:Count=0: 
+Q5:Q:Count=2: P84->P98-*
+Q6:Q:Count=0: 
+Q7:Q:Count=3: P57->P69->P99-*
+Q8:Q:Count=6: P38->P56->P67->P79->P90->P97-*
+Q9:Q:Count=9: P26->P35->P41->P47->P60->P78->P86->P87->P94-*
+Q10:Q:Count=7: P24->P30->P32->P36->P50->P92->P101-*
+Q11:Q:Count=10: P15->P44->P46->P59->P61->P72->P80->P85->P96->P100-*
+Q12:Q:Count=1: P64-*
+Q13:Q:Count=6: P48->P49->P52->P63->P65->P75-*
+Q14:Q:Count=5: P18->P19->P29->P45->P95-*
+Q15:Q:Count=2: P27->P81-*
+
+Dequeuing 4 PCBs:
+contents: PID: 0x5D, Priority: 0x2, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x54, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x62, Priority: 0x5, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x39, Priority: 0x7, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Dequeues complete.
+
+Step 10:
+Q0:Q:Count=0: 
+Q1:Q:Count=3: P104->P107->P111-*
+Q2:Q:Count=0: 
+Q3:Q:Count=0: 
+Q4:Q:Count=1: P106-*
+Q5:Q:Count=3: P103->P109->P110-*
+Q6:Q:Count=0: 
+Q7:Q:Count=2: P69->P99-*
+Q8:Q:Count=6: P38->P56->P67->P79->P90->P97-*
+Q9:Q:Count=10: P26->P35->P41->P47->P60->P78->P86->P87->P94->P108-*
+Q10:Q:Count=8: P24->P30->P32->P36->P50->P92->P101->P105-*
+Q11:Q:Count=10: P15->P44->P46->P59->P61->P72->P80->P85->P96->P100-*
+Q12:Q:Count=1: P64-*
+Q13:Q:Count=6: P48->P49->P52->P63->P65->P75-*
+Q14:Q:Count=5: P18->P19->P29->P45->P95-*
+Q15:Q:Count=3: P27->P81->P102-*
+
+Dequeuing 4 PCBs:
+contents: PID: 0x68, Priority: 0x1, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x6B, Priority: 0x1, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x6F, Priority: 0x1, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+contents: PID: 0x6A, Priority: 0x4, state: 1, memloc: 0x0 size: 0 channel: 0 PC: 0x0000, IR: 0000, r0: 0000, r1: 0000, r2: 0000, r3: 0000, r4: 0000, r5: 0000, r6: 0000, r7: 0000
+Dequeues complete.
+
+Final state:
+Q0:Q:Count=0: 
+Q1:Q:Count=0: 
+Q2:Q:Count=0: 
+Q3:Q:Count=0: 
+Q4:Q:Count=0: 
+Q5:Q:Count=3: P103->P109->P110-*
+Q6:Q:Count=0: 
+Q7:Q:Count=2: P69->P99-*
+Q8:Q:Count=6: P38->P56->P67->P79->P90->P97-*
+Q9:Q:Count=10: P26->P35->P41->P47->P60->P78->P86->P87->P94->P108-*
+Q10:Q:Count=8: P24->P30->P32->P36->P50->P92->P101->P105-*
+Q11:Q:Count=10: P15->P44->P46->P59->P61->P72->P80->P85->P96->P100-*
+Q12:Q:Count=1: P64-*
+Q13:Q:Count=6: P48->P49->P52->P63->P65->P75-*
+Q14:Q:Count=5: P18->P19->P29->P45->P95-*
+Q15:Q:Count=3: P27->P81->P102-*
+
+
+Destroying PQ.
+Done.
+END_OF_PQ_TESTS
+ALL_TESTS_COMPLETE
