@@ -1,7 +1,7 @@
 /*
  * Project 1
  *
- * Authors: Keegan Wantz, Carter Odem
+ * Authors: Keegan Wantz, Carter Odem, Connor Lundberg
  * TCSS 422.
  */
 
@@ -13,27 +13,27 @@
 /* A node used in a fifo queue to store data, and the next node. */
 typedef struct node {
     struct node * next;
-    PCB_p         pcb;
+    PCB         pcb;
 } Node_s;
 
-typedef Node_s * Node_p;
+typedef Node_s * ReadyQueueNode;
 
 /* A fifo queue, which stores size and pointers to the first and last nodes. */
 typedef struct fifo_queue {
-    Node_p first_node;
-    Node_p last_node;
+    ReadyQueueNode first_node;
+    ReadyQueueNode last_node;
 
     unsigned int size;
 } FIFOq_s;
 
-typedef FIFOq_s * FIFOq_p;
+typedef FIFOq_s * ReadyQueue;
 
 /*
  * Create a new FIFO Queue.
  *
  * Return: a pointer to a new FIFO queue, NULL if unsuccessful.
  */
-FIFOq_p q_create();
+ReadyQueue q_create();
 
 /*
  * Destroy a FIFO queue and all of its internal nodes.
@@ -41,7 +41,7 @@ FIFOq_p q_create();
  * Arguments: FIFOq: the queue to destroy.
  * This will also free all PCBs, to prevent any leaks. Do not use on a non empty queue if processing is still going to occur on a pcb.
  */
-void q_destroy(/* in-out */ FIFOq_p FIFOq);
+void q_destroy(/* in-out */ ReadyQueue FIFOq);
 
 /*
  * Checks if a queue is empty.
@@ -49,7 +49,7 @@ void q_destroy(/* in-out */ FIFOq_p FIFOq);
  * Arguments: FIFOq: the queue to test.
  * Return: 1 if empty, 0 otherwise.
  */
-char q_is_empty(/* in */ FIFOq_p FIFOq);
+char q_is_empty(/* in */ ReadyQueue FIFOq);
 
 /*
  * Attempts to enqueue the provided pcb.
@@ -58,7 +58,7 @@ char q_is_empty(/* in */ FIFOq_p FIFOq);
  *            pcb: the PCB to enqueue.
  * Return: 1 if successful, 0 if unsuccessful.
  */
-int q_enqueue(/* in */ FIFOq_p FIFOq, /* in */ PCB_p pcb);
+int q_enqueue(/* in */ ReadyQueue FIFOq, /* in */ PCB pcb);
 
 /*
  * Dequeues and returns a PCB from the queue, unless the queue is empty in which case null is returned.
@@ -66,7 +66,7 @@ int q_enqueue(/* in */ FIFOq_p FIFOq, /* in */ PCB_p pcb);
  * Arguments: FIFOq: the queue to dequeue from.
  * Return: NULL if empty, the PCB at the front of the queue otherwise.
  */
-PCB_p q_dequeue(/* in-out */ FIFOq_p FIFOq);
+PCB q_dequeue(/* in-out */ ReadyQueue FIFOq);
 
 /*
  * Creates and returns an output string representation of the FIFO queue.
@@ -76,7 +76,7 @@ PCB_p q_dequeue(/* in-out */ FIFOq_p FIFOq);
  * Return: a string of the contents of this FIFO queue. User is responsible for
  * freeing consumed memory.
  */
-char * q_to_string(/* in */ FIFOq_p FIFOq, /* in */ char display_back);
+char * toStringReadyQueue(/* in */ ReadyQueue FIFOq, /* in */ char display_back);
 
 /*
  * Helper function that resizes a malloced block of memory if the requested

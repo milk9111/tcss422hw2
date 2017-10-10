@@ -1,7 +1,7 @@
 /*
  * Project 1
  *
- * Authors: Keegan Wantz, Carter Odem
+ * Authors: Keegan Wantz, Carter Odem, Connor Lundberg
  * TCSS 422.
  */
 
@@ -51,28 +51,28 @@ typedef struct pcb {
     // other items to be added as needed.
 } PCB_s;
 
-typedef PCB_s * PCB_p;
+typedef PCB_s * PCB;
 
 /*
  * Allocate a PCB and a context for that PCB.
  *
  * Return: NULL if context or PCB allocation failed, the new pointer otherwise.
  */
-PCB_p PCB_create();
+PCB PCB_create();
 
 /*
  * Frees a PCB and its context.
  *
  * Arguments: pcb: the pcb to free.
  */
-void PCB_destroy(/* in-out */ PCB_p pcb);
+void PCB_destroy(/* in-out */ PCB pcb);
 
 /*
  * Assigns intial process ID to the process.
  *
  * Arguments: pcb: the pcb to modify.
  */
-void PCB_assign_PID(/* in */ PCB_p pcb);
+void PCB_assign_PID(/* in */ PCB pcb);
 
 /*
  * Sets the state of the process to the provided state.
@@ -80,7 +80,7 @@ void PCB_assign_PID(/* in */ PCB_p pcb);
  * Arguments: pcb: the pcb to modify.
  *            state: the new state of the process.
  */
-void PCB_assign_state(/* in-out */ PCB_p pcb, /* in */ enum state_type state);
+void PCB_assign_state(/* in-out */ PCB pcb, /* in */ enum state_type state);
 
 /*
  * Sets the parent of the given pcb to the provided pid.
@@ -88,7 +88,7 @@ void PCB_assign_state(/* in-out */ PCB_p pcb, /* in */ enum state_type state);
  * Arguments: pcb: the pcb to modify.
  *            pid: the parent PID for this process.
  */
-void PCB_assign_parent(PCB_p the_pcb, int pid);
+void PCB_assign_parent(PCB the_pcb, int pid);
 
 /*
  * Sets the priority of the PCB to the provided value.
@@ -96,7 +96,7 @@ void PCB_assign_parent(PCB_p the_pcb, int pid);
  * Arguments: pcb: the pcb to modify.
  *            state: the new priority of the process.
  */
-void PCB_assign_priority(/* in */ PCB_p pcb, /* in */ unsigned int priority);
+void PCB_assign_priority(/* in */ PCB pcb, /* in */ unsigned int priority);
 
 /*
  * Create and return a string representation of the provided PCB.
@@ -104,6 +104,6 @@ void PCB_assign_priority(/* in */ PCB_p pcb, /* in */ unsigned int priority);
  * Arguments: pcb: the pcb to create a string representation of.
  * Return: a string representation of the provided PCB on success, NULL otherwise.
  */
-char * PCB_to_string(/* in */ PCB_p pcb);
+char * toStringPCB(/* in */ PCB pcb);
 
 #endif

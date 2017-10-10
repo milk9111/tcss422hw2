@@ -1,7 +1,7 @@
 /*
  * Project 1
  *
- * Authors: Keegan Wantz, Carter Odem
+ * Authors: Keegan Wantz, Carter Odem, Connor Lundberg
  * TCSS 422.
  */
 
@@ -20,8 +20,8 @@
  *
  * Return: a pointer to a new FIFO queue, NULL if unsuccessful.
  */
-FIFOq_p q_create() {
-    FIFOq_p new_queue = malloc(sizeof(FIFOq_s));
+ReadyQueue q_create() {
+    ReadyQueue new_queue = malloc(sizeof(FIFOq_s));
 
     if (new_queue != NULL) {
         new_queue->first_node = NULL;
@@ -38,9 +38,9 @@ FIFOq_p q_create() {
  * Arguments: FIFOq: the queue to destroy.
  * This will also free all PCBs, to prevent any leaks. Do not use on a non empty queue if processing is still going to occur on a pcb.
  */
-void q_destroy(/* in-out */ FIFOq_p FIFOq) {
-    Node_p iter = FIFOq->first_node;
-    Node_p curr = NULL;
+void q_destroy(/* in-out */ ReadyQueue FIFOq) {
+    ReadyQueueNode iter = FIFOq->first_node;
+    ReadyQueueNode curr = NULL;
 
     while (iter != NULL) {
         curr = iter;
@@ -57,7 +57,7 @@ void q_destroy(/* in-out */ FIFOq_p FIFOq) {
  * Arguments: FIFOq: the queue to test.
  * Return: 1 if empty, 0 otherwise.
  */
-char q_is_empty(/* in */ FIFOq_p FIFOq) {
+char q_is_empty(/* in */ ReadyQueue FIFOq) {
     return (FIFOq->first_node == NULL);
 }
 
@@ -68,8 +68,8 @@ char q_is_empty(/* in */ FIFOq_p FIFOq) {
  *            pcb: the PCB to enqueue.
  * Return: 1 if successful, 0 if unsuccessful.
  */
-int q_enqueue(/* in */ FIFOq_p FIFOq, /* in */ PCB_p pcb) {
-    Node_p new_node = malloc(sizeof(Node_s));
+int q_enqueue(/* in */ ReadyQueue FIFOq, /* in */ PCB pcb) {
+    ReadyQueueNode new_node = malloc(sizeof(Node_s));
 
     if (new_node != NULL) {
         new_node->pcb = pcb;
@@ -95,9 +95,9 @@ int q_enqueue(/* in */ FIFOq_p FIFOq, /* in */ PCB_p pcb) {
  * Arguments: FIFOq: the queue to dequeue from.
  * Return: NULL if empty, the PCB at the front of the queue otherwise.
  */
-PCB_p q_dequeue(/* in-out */ FIFOq_p FIFOq) {
-    PCB_p ret_pcb = NULL;
-    Node_p ret_node = FIFOq->first_node;
+PCB q_dequeue(/* in-out */ ReadyQueue FIFOq) {
+    PCB ret_pcb = NULL;
+    ReadyQueueNode ret_node = FIFOq->first_node;
 
     if (ret_node != NULL) {
         FIFOq->first_node = ret_node->next;
@@ -125,8 +125,8 @@ PCB_p q_dequeue(/* in-out */ FIFOq_p FIFOq) {
  * Return: a string of the contents of this FIFO queue. User is responsible for
  * freeing consumed memory.
  */
-char * q_to_string(/* in */ FIFOq_p FIFOq, /* in */ char display_back) {
-    Node_p iter = FIFOq->first_node;
+char * toStringReadyQueue(/* in */ ReadyQueue FIFOq, /* in */ char display_back) {
+    ReadyQueueNode iter = FIFOq->first_node;
 
     unsigned int buff_len = 1000;
     unsigned int cpos = 0;
@@ -163,7 +163,7 @@ char * q_to_string(/* in */ FIFOq_p FIFOq, /* in */ char display_back) {
         if (FIFOq->last_node != NULL && display_back == 1) {
             /* There is enough space in PROCESS_QUEUE_DISPLAY_LENGTH to allow for this addition without any additional change */
             cpos += sprintf(ret_str + cpos, " : ");
-            char * PCB_string = PCB_to_string(FIFOq->last_node->pcb);
+            char * PCB_string = toStringPCB(FIFOq->last_node->pcb);
 
             if (PCB_string != NULL) {
                 pcb_str_len = strlen(PCB_string);

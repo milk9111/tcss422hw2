@@ -1,7 +1,7 @@
 /*
  * Project 1
  *
- * Authors: Keegan Wantz, Carter Odem
+ * Authors: Keegan Wantz, Carter Odem, Connor Lundberg
  * TCSS 422.
  */
 
@@ -18,9 +18,9 @@
  *
  * Return: A new priority queue on success, NULL on failure.
  */
-PQ_p pq_create() {
+PriorityQueue pq_create() {
     int i, failed = -1;
-    PQ_p new_pq = malloc(sizeof(PQ_s));
+    PriorityQueue new_pq = malloc(sizeof(PQ_s));
 
     if (new_pq != NULL) {
         for (i = 0; i < NUM_PRIORITIES; i++) {
@@ -49,7 +49,7 @@ PQ_p pq_create() {
  *
  * Arguments: PQ: The Priority Queue to destroy.
  */
-void pq_destroy(PQ_p PQ) {
+void pq_destroy(PriorityQueue PQ) {
     int i;
 
     /* Free all our inner FIFO queues. */
@@ -66,7 +66,7 @@ void pq_destroy(PQ_p PQ) {
  * Arguments: PQ: The Priority Queue to enqueue to.
  *            pcb: the PCB to enqueue.
  */
-void pq_enqueue(PQ_p PQ, PCB_p pcb) {
+void pq_enqueue(PriorityQueue PQ, PCB pcb) {
     q_enqueue(PQ->queues[pcb->priority], pcb);
 }
 
@@ -76,9 +76,9 @@ void pq_enqueue(PQ_p PQ, PCB_p pcb) {
  * Arguments: PQ: The Priority Queue to dequeue from.
  * Return: The highest priority proccess in the queue, NULL if none exists.
  */
-PCB_p pq_dequeue(PQ_p PQ) {
+PCB pq_dequeue(PriorityQueue PQ) {
     int i;
-    PCB_p ret_pcb = NULL;
+    PCB ret_pcb = NULL;
 
     for (i = 0; i < NUM_PRIORITIES; i++) {
         if (!q_is_empty(PQ->queues[i])) {
@@ -95,7 +95,7 @@ PCB_p pq_dequeue(PQ_p PQ) {
  * Arguments: PQ: The Priority Queue to test.
  * Return: 1 if the queue is empty, 0 otherwise.
  */
-char pq_is_empty(PQ_p PQ) {
+char pq_is_empty(PriorityQueue PQ) {
     int i;
     char ret_val = 1;
 
@@ -116,7 +116,7 @@ char pq_is_empty(PQ_p PQ) {
  * Arguments: PQ: the Priority Queue to create a string representation of.
  * Return: A string representation of the provided Priority Queue, or NULL on failure.
  */
-char * pq_to_string(PQ_p PQ) {
+char * toStringPriorityQueue(PriorityQueue PQ) {
     unsigned int buff_len = 1000;
     unsigned int cpos = 0;
     unsigned int q_str_len = 0;
@@ -127,7 +127,7 @@ char * pq_to_string(PQ_p PQ) {
 
     if (ret_str != NULL) {
         for (i = 0; i < NUM_PRIORITIES; i++) {
-            q_str = q_to_string(PQ->queues[i], 0);
+            q_str = toStringReadyQueue(PQ->queues[i], 0);
             if (q_str != NULL) {
                 q_str_len = strlen(q_str);
                 str_resize = resize_block_if_needed(ret_str, cpos + q_str_len
@@ -142,4 +142,13 @@ char * pq_to_string(PQ_p PQ) {
     }
 
     return ret_str;
+}
+
+
+void main () {
+	PriorityQueue pQueue = pq_create();
+	PCB pcb[10];
+	for (int i = 0; i < 10; i++) {
+		
+	}
 }

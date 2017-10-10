@@ -1,7 +1,7 @@
 /*
  * Project 1
  *
- * Authors: Keegan Wantz, Carter Odem
+ * Authors: Keegan Wantz, Carter Odem, Connor Lundberg
  * TCSS 422.
  */
 
@@ -15,7 +15,7 @@ int global_largest_PID = 0;
 /*
  * Helper function to iniialize PCB data.
  */
-void initialize_data(/* in-out */ PCB_p pcb) {
+void initialize_data(/* in-out */ PCB pcb) {
   pcb->pid = 0;
   pcb->priority = 0;
   pcb->size = 0;
@@ -41,8 +41,8 @@ void initialize_data(/* in-out */ PCB_p pcb) {
  *
  * Return: NULL if context or PCB allocation failed, the new pointer otherwise.
  */
-PCB_p PCB_create() {
-    PCB_p new_pcb = malloc(sizeof(PCB_s));
+PCB PCB_create() {
+    PCB new_pcb = malloc(sizeof(PCB_s));
     if (new_pcb != NULL) {
         new_pcb->context = malloc(sizeof(CPU_context_s));
         if (new_pcb->context != NULL) {
@@ -60,7 +60,7 @@ PCB_p PCB_create() {
  *
  * Arguments: pcb: the pcb to free.
  */
-void PCB_destroy(/* in-out */ PCB_p pcb) {
+void PCB_destroy(/* in-out */ PCB pcb) {
   free(pcb->context);
   free(pcb);// that thing
 }
@@ -70,7 +70,7 @@ void PCB_destroy(/* in-out */ PCB_p pcb) {
  *
  * Arguments: pcb: the pcb to modify.
  */
-void PCB_assign_PID(/* in */ PCB_p the_PCB) {
+void PCB_assign_PID(/* in */ PCB the_PCB) {
     the_PCB->pid = global_largest_PID;
     global_largest_PID++;
 }
@@ -81,7 +81,7 @@ void PCB_assign_PID(/* in */ PCB_p the_PCB) {
  * Arguments: pcb: the pcb to modify.
  *            state: the new state of the process.
  */
-void PCB_assign_state(/* in-out */ PCB_p the_pcb, /* in */ enum state_type the_state) {
+void PCB_assign_state(/* in-out */ PCB the_pcb, /* in */ enum state_type the_state) {
     the_pcb->state = the_state;
 }
 
@@ -91,7 +91,7 @@ void PCB_assign_state(/* in-out */ PCB_p the_pcb, /* in */ enum state_type the_s
  * Arguments: pcb: the pcb to modify.
  *            pid: the parent PID for this process.
  */
-void PCB_assign_parent(PCB_p the_pcb, int the_pid) {
+void PCB_assign_parent(PCB the_pcb, int the_pid) {
     the_pcb->parent = the_pid;
 }
 
@@ -101,7 +101,7 @@ void PCB_assign_parent(PCB_p the_pcb, int the_pid) {
  * Arguments: pcb: the pcb to modify.
  *            state: the new priority of the process.
  */
-void PCB_assign_priority(/* in */ PCB_p the_pcb, /* in */ unsigned int the_priority) {
+void PCB_assign_priority(/* in */ PCB the_pcb, /* in */ unsigned int the_priority) {
     the_pcb->priority = the_priority;
     if (the_priority > NUM_PRIORITIES) {
         the_pcb->priority = NUM_PRIORITIES - 1;
@@ -114,7 +114,7 @@ void PCB_assign_priority(/* in */ PCB_p the_pcb, /* in */ unsigned int the_prior
  * Arguments: pcb: the pcb to create a string representation of.
  * Return: a string representation of the provided PCB on success, NULL otherwise.
  */
-char * PCB_to_string(/* in */ PCB_p the_pcb) {
+char * toStringPCB(/* in */ PCB the_pcb) {
     /* Oversized buffer for creating the initial version of the string. */
     char temp_buf[1000];
     unsigned int cpos = 0;
