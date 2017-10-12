@@ -47,6 +47,7 @@ PCB PCB_create() {
         new_pcb->context = malloc(sizeof(CPU_context_s));
         if (new_pcb->context != NULL) {
             initialize_data(new_pcb);
+			PCB_assign_PID(new_pcb);
         } else {
             free(new_pcb);
             new_pcb = NULL;
@@ -114,25 +115,33 @@ void PCB_assign_priority(/* in */ PCB the_pcb, /* in */ unsigned int the_priorit
  * Arguments: pcb: the pcb to create a string representation of.
  * Return: a string representation of the provided PCB on success, NULL otherwise.
  */
-char * toStringPCB(/* in */ PCB the_pcb) {
+char * toStringPCB(/* in */ PCB the_pcb, int showAll) {
     /* Oversized buffer for creating the initial version of the string. */
     char temp_buf[1000];
     unsigned int cpos = 0;
 
-    cpos += sprintf(temp_buf, "contents: PID: 0x%X, Priority: 0x%X, state: %u, "
-            "memloc: %p size: %u channel: %X ",
-            the_pcb->pid, the_pcb->priority, the_pcb->state,
-            the_pcb->mem, the_pcb->size, the_pcb->channel_no);
+	if (showAll) {
+		cpos += sprintf(temp_buf, "contents: PID: 0x%X, Priority: 0x%X, state: %u, "
+				"memloc: %p size: %u channel: %X ",
+				the_pcb->pid, the_pcb->priority, the_pcb->state,
+				the_pcb->mem, the_pcb->size, the_pcb->channel_no);
 
-    /* Append the context: */
-    sprintf(temp_buf + cpos, "PC: 0x%04X, IR: %04X, "
-            "r0: %04X, r1: %04X, r2: %04X, r3: %04X, r4: %04X, "
-            "r5: %04X, r6: %04X, r7: %04X",
-            the_pcb->context->pc, the_pcb->context->ir, the_pcb->context->r0,
-            the_pcb->context->r1, the_pcb->context->r2, the_pcb->context->r3,
-            the_pcb->context->r4, the_pcb->context->r5, the_pcb->context->r6,
-            the_pcb->context->r7);
+		/* Append the context: */
+		sprintf(temp_buf + cpos, "PC: 0x%04X, IR: %04X, "
+				"r0: %04X, r1: %04X, r2: %04X, r3: %04X, r4: %04X, "
+				"r5: %04X, r6: %04X, r7: %04X",
+				the_pcb->context->pc, the_pcb->context->ir, the_pcb->context->r0,
+				the_pcb->context->r1, the_pcb->context->r2, the_pcb->context->r3,
+				the_pcb->context->r4, the_pcb->context->r5, the_pcb->context->r6,
+				the_pcb->context->r7);
+	} else {
+		cpos += sprintf(temp_buf, "contents: PID: 0x%X, state: %u, "
+				"memloc: %p ", the_pcb->pid, the_pcb->state, the_pcb->mem);
 
+		/* Append the context: */
+		sprintf(temp_buf + cpos, "PC: 0x%04X", the_pcb->context->pc);
+	}
+	
     /* A string that can be returned and -not- go out of scope. */
     char * ret_val = malloc(sizeof(char) * (strlen(temp_buf) + 1));
 

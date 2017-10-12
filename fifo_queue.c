@@ -52,6 +52,17 @@ void q_destroy(/* in-out */ ReadyQueue FIFOq) {
 }
 
 /*
+ * Peeks and returns a PCB from the queue, unless the queue is empty in which case null is returned.
+ *
+ * Arguments: FIFOq: the queue to peek from.
+ * Return: NULL if empty, the PCB at the front of the queue otherwise.
+ */
+PCB q_peek(ReadyQueue FIFOq) {
+	PCB headPCB = FIFOq->first_node->pcb;
+	return headPCB;
+}
+
+/*
  * Checks if a queue is empty.
  *
  * Arguments: FIFOq: the queue to test.
@@ -163,7 +174,7 @@ char * toStringReadyQueue(/* in */ ReadyQueue FIFOq, /* in */ char display_back)
         if (FIFOq->last_node != NULL && display_back == 1) {
             /* There is enough space in PROCESS_QUEUE_DISPLAY_LENGTH to allow for this addition without any additional change */
             cpos += sprintf(ret_str + cpos, " : ");
-            char * PCB_string = toStringPCB(FIFOq->last_node->pcb);
+            char * PCB_string = toStringPCB(FIFOq->last_node->pcb, 1);
 
             if (PCB_string != NULL) {
                 pcb_str_len = strlen(PCB_string);

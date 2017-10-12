@@ -143,12 +143,3 @@ char * toStringPriorityQueue(PriorityQueue PQ) {
 
     return ret_str;
 }
-
-
-void main () {
-	PriorityQueue pQueue = pq_create();
-	PCB pcb[10];
-	for (int i = 0; i < 10; i++) {
-		
-	}
-}

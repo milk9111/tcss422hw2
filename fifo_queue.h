@@ -69,6 +69,14 @@ int q_enqueue(/* in */ ReadyQueue FIFOq, /* in */ PCB pcb);
 PCB q_dequeue(/* in-out */ ReadyQueue FIFOq);
 
 /*
+ * Peeks and returns a PCB from the queue, unless the queue is empty in which case null is returned.
+ *
+ * Arguments: FIFOq: the queue to peek from.
+ * Return: NULL if empty, the PCB at the front of the queue otherwise.
+ */
+PCB q_peek(ReadyQueue FIFOq);
+
+/*
  * Creates and returns an output string representation of the FIFO queue.
  *
  * Arguments: FIFOq: The queue to perform this operation on
