@@ -192,8 +192,8 @@ void schedulerDeconstructor (Scheduler theScheduler) {
 	PCB_destroy(theScheduler->running);
 	printf("break on running?\n");
 	if (theScheduler->interrupted == theScheduler->running) {
-	PCB_destroy(theScheduler->interrupted);
-	printf("break on interrupted?\n");
+		PCB_destroy(theScheduler->interrupted);
+		printf("break on interrupted?\n");
 	}
 	free (theScheduler);
 	printf("break on free scheduler?\n");
