@@ -164,6 +164,10 @@ void pseudoIRET (Scheduler theScheduler) {
 }
 
 
+/*
+	This will construct the Scheduler, along with its numerous ReadyQueues and
+	important PCBs.
+*/
 Scheduler schedulerConstructor () {
 	Scheduler newScheduler = (Scheduler) malloc (sizeof(scheduler_s));
 	newScheduler->created = q_create();
@@ -178,6 +182,12 @@ Scheduler schedulerConstructor () {
 }
 
 
+/*
+	This will do the opposite of the constructor with the exception of 
+	the interrupted PCB which checks for equivalancy of it and the running
+	PCB to see if they are pointing to the same freed process (so the program
+	doesn't crash).
+*/
 void schedulerDeconstructor (Scheduler theScheduler) {
 	q_destroy(theScheduler->created);
 	q_destroy(theScheduler->killed);
