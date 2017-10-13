@@ -62,8 +62,8 @@ PCB PCB_create() {
  * Arguments: pcb: the pcb to free.
  */
 void PCB_destroy(/* in-out */ PCB pcb) {
-  free(pcb->context);
-  free(pcb);// that thing
+	  free(pcb->context);
+	  free(pcb);// that thing
 }
 
 /*
