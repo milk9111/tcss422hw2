@@ -1,0 +1,134 @@
+Making New PCBs: 
+contents: PID: 0x2, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x3, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x4, state: 1, memloc: 0x0 PC: 0x0000
+
+Making New PCBs: 
+Making New PCBs: 
+contents: PID: 0x5, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x6, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x7, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x8, state: 1, memloc: 0x0 PC: 0x0000
+
+Before switching:
+contents: PID: 0x4, state: 1, memloc: 0x0 PC: 0x251E
+Switching to:
+contents: PID: 0x2, state: 1, memloc: 0x0 PC: 0x0CEC
+
+After switching:
+contents: PID: 0x2, state: 2, memloc: 0x0 PC: 0x0CEC
+contents: PID: 0x4, state: 1, memloc: 0x0 PC: 0x251E
+
+Q:Count=6: P3->P5->P6->P7->P8->P4-*
+
+Making New PCBs: 
+contents: PID: 0x9, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0xA, state: 1, memloc: 0x0 PC: 0x0000
+
+Making New PCBs: 
+contents: PID: 0xB, state: 1, memloc: 0x0 PC: 0x0000
+
+Making New PCBs: 
+contents: PID: 0xC, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0xD, state: 1, memloc: 0x0 PC: 0x0000
+
+Before switching:
+contents: PID: 0x5, state: 1, memloc: 0x0 PC: 0x4F3F
+Switching to:
+contents: PID: 0x6, state: 1, memloc: 0x0 PC: 0x0000
+
+After switching:
+contents: PID: 0x6, state: 2, memloc: 0x0 PC: 0x0000
+contents: PID: 0x5, state: 1, memloc: 0x0 PC: 0x4F3F
+
+Q:Count=11: P7->P8->P4->P9->P10->P2->P11->P3->P12->P13->P5-*
+
+Making New PCBs: 
+contents: PID: 0xE, state: 1, memloc: 0x0 PC: 0x0000
+
+Making New PCBs: 
+Making New PCBs: 
+contents: PID: 0xF, state: 1, memloc: 0x0 PC: 0x0000
+
+Before switching:
+contents: PID: 0x8, state: 1, memloc: 0x0 PC: 0x786F
+Switching to:
+contents: PID: 0x4, state: 1, memloc: 0x0 PC: 0x251E
+
+After switching:
+contents: PID: 0x4, state: 2, memloc: 0x0 PC: 0x251E
+contents: PID: 0x8, state: 1, memloc: 0x0 PC: 0x786F
+
+Q:Count=13: P9->P10->P2->P11->P3->P12->P13->P5->P14->P6->P7->P15->P8-*
+
+Making New PCBs: 
+contents: PID: 0x10, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x11, state: 1, memloc: 0x0 PC: 0x0000
+
+Making New PCBs: 
+Making New PCBs: 
+Before switching:
+contents: PID: 0xA, state: 1, memloc: 0x0 PC: 0xA30D
+Switching to:
+contents: PID: 0x2, state: 1, memloc: 0x0 PC: 0x332A
+
+After switching:
+contents: PID: 0x2, state: 2, memloc: 0x0 PC: 0x332A
+contents: PID: 0xA, state: 1, memloc: 0x0 PC: 0xA30D
+
+Q:Count=15: P11->P3->P12->P13->P5->P14->P6->P7->P15->P8->P16->P17->P4->P9->P10-*
+
+Making New PCBs: 
+Making New PCBs: 
+contents: PID: 0x12, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x13, state: 1, memloc: 0x0 PC: 0x0000
+
+Making New PCBs: 
+contents: PID: 0x14, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x15, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x16, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x17, state: 1, memloc: 0x0 PC: 0x0000
+
+Before switching:
+contents: PID: 0x3, state: 1, memloc: 0x0 PC: 0xC884
+Switching to:
+contents: PID: 0xC, state: 1, memloc: 0x0 PC: 0x0000
+
+After switching:
+contents: PID: 0xC, state: 2, memloc: 0x0 PC: 0x0000
+contents: PID: 0x3, state: 1, memloc: 0x0 PC: 0xC884
+
+Q:Count=21: P13->P5->P14->P6->P7->P15->P8->P16->P17->P4->P9->P10->P2->P18->P19->P11->P20->P21->P22->P23->P3-*
+
+Making New PCBs: 
+contents: PID: 0x18, state: 1, memloc: 0x0 PC: 0x0000
+
+Making New PCBs: 
+contents: PID: 0x19, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x1A, state: 1, memloc: 0x0 PC: 0x0000
+
+Making New PCBs: 
+contents: PID: 0x1B, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x1C, state: 1, memloc: 0x0 PC: 0x0000
+
+Before switching:
+contents: PID: 0x5, state: 1, memloc: 0x0 PC: 0xF00A
+Switching to:
+contents: PID: 0xE, state: 1, memloc: 0x0 PC: 0x0000
+
+After switching:
+contents: PID: 0xE, state: 2, memloc: 0x0 PC: 0x0000
+contents: PID: 0x5, state: 1, memloc: 0x0 PC: 0xF00A
+
+Q:Count=26: P6->P7->P15->P8->P16->P17->P4->P9->P10->P2->P18->P19->P11->P20->P21->P22->P23->P3->P24->P12->P25->P26->P13->P27->P28->P5-*
+
+Making New PCBs: 
+contents: PID: 0x1D, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x1E, state: 1, memloc: 0x0 PC: 0x0000
+
+Making New PCBs: 
+contents: PID: 0x1F, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x20, state: 1, memloc: 0x0 PC: 0x0000
+contents: PID: 0x21, state: 1, memloc: 0x0 PC: 0x0000
+
+Reached max PCBs, ending Scheduler.

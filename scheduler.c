@@ -29,7 +29,7 @@ void timer () {
 	Scheduler thisScheduler = schedulerConstructor();
 	for (;;) {
 		if (totalProcesses >= MAX_PCB_TOTAL) {
-			printf("too many processes\n");
+			printf("Reached max PCBs, ending Scheduler.\r\n");
 			break;
 		}
 		totalProcesses += makePCBList(thisScheduler);
@@ -38,7 +38,6 @@ void timer () {
 		pseudoISR(thisScheduler);
 		pc = thisScheduler->running->context->pc;
 	}
-	printf("going to deconstruct\n");
 	schedulerDeconstructor(thisScheduler);
 }
 
@@ -55,17 +54,17 @@ int makePCBList (Scheduler theScheduler) {
 		newPCB->state = STATE_NEW;
 		q_enqueue(theScheduler->created, newPCB);
 	}
-	printf("Making New PCBs: \n");
+	printf("Making New PCBs: \r\n");
 	if (newPCBCount) {
 		while (!q_is_empty(theScheduler->created)) {
 			PCB nextPCB = q_dequeue(theScheduler->created);
 			nextPCB->state = STATE_READY;
 			char *nextPCBState = toStringPCB(nextPCB, 0);
-			printf("%s\n", nextPCBState);
+			printf("%s\r\n", nextPCBState);
 			free(nextPCBState);
 			q_enqueue(theScheduler->ready, nextPCB);
 		}
-		printf("\n");
+		printf("\r\n");
 		if (theScheduler->isNew) {
 			theScheduler->running = q_dequeue(theScheduler->ready);
 			theScheduler->running->state = STATE_RUNNING;
@@ -114,34 +113,33 @@ void scheduling (int isTimer, Scheduler theScheduler) {
 		theScheduler->interrupted->state = STATE_READY;
 		q_enqueue(theScheduler->ready, theScheduler->interrupted);
 	}
-	printf("got here\n");
 	if (switchCalls != (SWITCH_CALLS - 1)) {
 		switchCalls++;
 	}
 	
 	if (switchCalls == (SWITCH_CALLS - 1)) {
 		char *runningPCBState = toStringPCB(theScheduler->running, 0);
-		printf("Before switching:\n");
-		printf("%s\n", runningPCBState);
+		printf("Before switching:\r\n");
+		printf("%s\r\n", runningPCBState);
 		free(runningPCBState);
-		printf("Switching to:\n");
+		printf("Switching to:\r\n");
 		char *nextPCBState = toStringPCB(q_peek(theScheduler->ready), 0);
-		printf("%s\n\n", nextPCBState);
+		printf("%s\r\n\r\n", nextPCBState);
 		free(nextPCBState);
 	}
 	
 	dispatcher(theScheduler);
 	
 	if (switchCalls == (SWITCH_CALLS - 1)) {
-		printf("After switching:\n");
+		printf("After switching:\r\n");
 		char *runningPCBState = toStringPCB(theScheduler->running, 0);
-		printf("%s\n", runningPCBState);
+		printf("%s\r\n", runningPCBState);
 		free(runningPCBState);
 		char *interruptedPCBState = toStringPCB(theScheduler->interrupted, 0);
-		printf("%s\n\n", interruptedPCBState);
+		printf("%s\r\n\r\n", interruptedPCBState);
 		free(interruptedPCBState);
 		char *queueState = toStringReadyQueue(theScheduler->ready, 0);
-		printf("%s\n\n", queueState);
+		printf("%s\r\n\r\n", queueState);
 		free(queueState);
 		switchCalls = 0;
 	} 
@@ -182,21 +180,14 @@ Scheduler schedulerConstructor () {
 
 void schedulerDeconstructor (Scheduler theScheduler) {
 	q_destroy(theScheduler->created);
-	printf("break on created?\n");
 	q_destroy(theScheduler->killed);
-	printf("break on killed?\n");
 	q_destroy(theScheduler->blocked);
-	printf("break on blocked?\n");
 	q_destroy(theScheduler->ready);
-	printf("break on ready?\n");
 	PCB_destroy(theScheduler->running);
-	printf("break on running?\n");
 	if (theScheduler->interrupted == theScheduler->running) {
 		PCB_destroy(theScheduler->interrupted);
-		printf("break on interrupted?\n");
 	}
 	free (theScheduler);
-	printf("break on free scheduler?\n");
 }
 
 
